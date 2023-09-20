@@ -16,6 +16,7 @@
 		858F155A2ABB77F1002B64C1 /* PowerUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15592ABB77F1002B64C1 /* PowerUpTests.swift */; };
 		858F15642ABB77F1002B64C1 /* PowerUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */; };
 		858F15662ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */; };
+		858F15752ABB99B4002B64C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 858F15742ABB99B4002B64C1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		858F155F2ABB77F1002B64C1 /* PowerUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITests.swift; sourceTree = "<group>"; };
 		858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		858F15742ABB99B4002B64C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
+				858F15742ABB99B4002B64C1 /* README.md */,
 				858F15412ABB77F0002B64C1 /* PowerUp */,
 				858F15582ABB77F1002B64C1 /* PowerUpTests */,
 				858F15622ABB77F1002B64C1 /* PowerUpUITests */,
@@ -233,6 +236,7 @@
 			files = (
 				858F154F2ABB77F1002B64C1 /* LaunchScreen.storyboard in Resources */,
 				858F154C2ABB77F1002B64C1 /* Assets.xcassets in Resources */,
+				858F15752ABB99B4002B64C1 /* README.md in Resources */,
 				858F154A2ABB77F0002B64C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
