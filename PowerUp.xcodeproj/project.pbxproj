@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
 		858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15422ABB77F0002B64C1 /* AppDelegate.swift */; };
 		858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15442ABB77F0002B64C1 /* SceneDelegate.swift */; };
 		858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15462ABB77F0002B64C1 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		858F153F2ABB77F0002B64C1 /* PowerUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F15422ABB77F0002B64C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858F15442ABB77F0002B64C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
+				11433FBD2ABCBCDD005AA716 /* .gitignore */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */,
 				858F154F2ABB77F1002B64C1 /* LaunchScreen.storyboard in Resources */,
 				858F154C2ABB77F1002B64C1 /* Assets.xcassets in Resources */,
 				858F15752ABB99B4002B64C1 /* README.md in Resources */,
