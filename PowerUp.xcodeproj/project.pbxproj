@@ -83,6 +83,7 @@
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
+				11433FBD2ABCBCDD005AA716 /* .gitignore */,
 				858F15742ABB99B4002B64C1 /* README.md */,
 				858F15412ABB77F0002B64C1 /* PowerUp */,
 				858F15582ABB77F1002B64C1 /* PowerUpTests */,
@@ -111,7 +112,6 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
-				11433FBD2ABCBCDD005AA716 /* .gitignore */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
