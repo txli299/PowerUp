@@ -17,6 +17,7 @@
 		858F15642ABB77F1002B64C1 /* PowerUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */; };
 		858F15662ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */; };
 		858F15752ABB99B4002B64C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 858F15742ABB99B4002B64C1 /* README.md */; };
+		858F165F2AC23B1F002B64C1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F165E2AC23B1F002B64C1 /* StoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITests.swift; sourceTree = "<group>"; };
 		858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		858F15742ABB99B4002B64C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		858F165E2AC23B1F002B64C1 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				858F15442ABB77F0002B64C1 /* SceneDelegate.swift */,
 				858F15462ABB77F0002B64C1 /* ViewController.swift */,
 				858F15482ABB77F0002B64C1 /* Main.storyboard */,
+				858F165E2AC23B1F002B64C1 /* StoreViewController.swift */,
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858F165F2AC23B1F002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
