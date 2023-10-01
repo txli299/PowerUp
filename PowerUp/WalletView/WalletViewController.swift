@@ -5,25 +5,24 @@
 //  Created by Hank Gu on 10/1/23.
 //
 
+
 import UIKit
 
 class WalletViewController: UIViewController {
+    
+    private let walletView = WalletView()
+
+    override func loadView() {
+        view = walletView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        walletView.addFundsButton.addTarget(self, action: #selector(addFundsTapped), for: .touchUpInside)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func addFundsTapped() {
+        print("Add Funds Button: I was clicked!")
+        // Redirect to Stripe's page to add funds
     }
-    */
-
 }

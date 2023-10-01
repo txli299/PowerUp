@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4453BF782AC9F0820017F04B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF772AC9F0820017F04B /* WalletViewController.swift */; };
+		4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7A2ACA0AC30017F04B /* WalletView.swift */; };
+		4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */; };
 		858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15422ABB77F0002B64C1 /* AppDelegate.swift */; };
 		858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15442ABB77F0002B64C1 /* SceneDelegate.swift */; };
 		858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15462ABB77F0002B64C1 /* ViewController.swift */; };
@@ -38,7 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4453BF772AC9F0820017F04B /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		4453BF7A2ACA0AC30017F04B /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		858F153F2ABB77F0002B64C1 /* PowerUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F15422ABB77F0002B64C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858F15442ABB77F0002B64C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4453BF792ACA0A2A0017F04B /* WalletView */ = {
+			isa = PBXGroup;
+			children = (
+				4453BF7A2ACA0AC30017F04B /* WalletView.swift */,
+				4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */,
+			);
+			path = WalletView;
+			sourceTree = "<group>";
+		};
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +115,7 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
+				4453BF792ACA0A2A0017F04B /* WalletView */,
 				858F15422ABB77F0002B64C1 /* AppDelegate.swift */,
 				858F15442ABB77F0002B64C1 /* SceneDelegate.swift */,
 				858F15462ABB77F0002B64C1 /* ViewController.swift */,
@@ -111,7 +123,6 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
-				4453BF772AC9F0820017F04B /* WalletViewController.swift */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -266,9 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
-				4453BF782AC9F0820017F04B /* WalletViewController.swift in Sources */,
+				4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
+				4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
