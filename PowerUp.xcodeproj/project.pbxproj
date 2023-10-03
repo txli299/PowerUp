@@ -17,6 +17,10 @@
 		858F15642ABB77F1002B64C1 /* PowerUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */; };
 		858F15662ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */; };
 		858F15752ABB99B4002B64C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 858F15742ABB99B4002B64C1 /* README.md */; };
+		858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16AD2ACA7357002B64C1 /* StoreViewController.swift */; };
+		858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */; };
+		858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B22ACB978C002B64C1 /* TimeScreen.swift */; };
+		858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B42ACB97A1002B64C1 /* TimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITests.swift; sourceTree = "<group>"; };
 		858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		858F15742ABB99B4002B64C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		858F16AD2ACA7357002B64C1 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScreen.swift; sourceTree = "<group>"; };
+		858F16B22ACB978C002B64C1 /* TimeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreen.swift; sourceTree = "<group>"; };
+		858F16B42ACB97A1002B64C1 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,8 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
+				858F16B12ACB9777002B64C1 /* Time Screen */,
+				858F16AC2ACA7338002B64C1 /* Store Screen */,
 				858F15422ABB77F0002B64C1 /* AppDelegate.swift */,
 				858F15442ABB77F0002B64C1 /* SceneDelegate.swift */,
 				858F15462ABB77F0002B64C1 /* ViewController.swift */,
@@ -128,6 +138,24 @@
 				858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */,
 			);
 			path = PowerUpUITests;
+			sourceTree = "<group>";
+		};
+		858F16AC2ACA7338002B64C1 /* Store Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858F16AD2ACA7357002B64C1 /* StoreViewController.swift */,
+				858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */,
+			);
+			path = "Store Screen";
+			sourceTree = "<group>";
+		};
+		858F16B12ACB9777002B64C1 /* Time Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858F16B22ACB978C002B64C1 /* TimeScreen.swift */,
+				858F16B42ACB97A1002B64C1 /* TimeViewController.swift */,
+			);
+			path = "Time Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
+				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
+				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
+				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
