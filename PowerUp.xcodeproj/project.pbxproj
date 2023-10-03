@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7A2ACA0AC30017F04B /* WalletView.swift */; };
-		4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */; };
 		1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* ProfileScreenController.swift */; };
 		1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
@@ -46,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4453BF7A2ACA0AC30017F04B /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
-		4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		1129A8892ACB5E990054E020 /* ProfileScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -96,13 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4453BF792ACA0A2A0017F04B /* WalletView */ = {
-			isa = PBXGroup;
-			children = (
-				4453BF7A2ACA0AC30017F04B /* WalletView.swift */,
-				4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */,
-			);
-			path = WalletView;
 		1129A8882ACB5DF00054E020 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +126,6 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
-				4453BF792ACA0A2A0017F04B /* WalletView */,
 				1129A8882ACB5DF00054E020 /* ProfileScreen */,
 				858F16B12ACB9777002B64C1 /* Time Screen */,
 				858F16AC2ACA7338002B64C1 /* Store Screen */,
@@ -322,7 +310,6 @@
 			files = (
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
-				4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
@@ -330,7 +317,6 @@
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
-				4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
