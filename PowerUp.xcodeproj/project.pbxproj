@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7A2ACA0AC30017F04B /* WalletView.swift */; };
 		4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */; };
+		1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* ProfileScreenController.swift */; };
+		1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */; };
+		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
 		858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15422ABB77F0002B64C1 /* AppDelegate.swift */; };
 		858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15442ABB77F0002B64C1 /* SceneDelegate.swift */; };
 		858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15462ABB77F0002B64C1 /* ViewController.swift */; };
@@ -19,6 +22,10 @@
 		858F15642ABB77F1002B64C1 /* PowerUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */; };
 		858F15662ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */; };
 		858F15752ABB99B4002B64C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 858F15742ABB99B4002B64C1 /* README.md */; };
+		858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16AD2ACA7357002B64C1 /* StoreViewController.swift */; };
+		858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */; };
+		858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B22ACB978C002B64C1 /* TimeScreen.swift */; };
+		858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B42ACB97A1002B64C1 /* TimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,9 @@
 /* Begin PBXFileReference section */
 		4453BF7A2ACA0AC30017F04B /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		1129A8892ACB5E990054E020 /* ProfileScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenController.swift; sourceTree = "<group>"; };
+		1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
+		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		858F153F2ABB77F0002B64C1 /* PowerUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F15422ABB77F0002B64C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858F15442ABB77F0002B64C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +65,10 @@
 		858F15632ABB77F1002B64C1 /* PowerUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITests.swift; sourceTree = "<group>"; };
 		858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		858F15742ABB99B4002B64C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		858F16AD2ACA7357002B64C1 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScreen.swift; sourceTree = "<group>"; };
+		858F16B22ACB978C002B64C1 /* TimeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreen.swift; sourceTree = "<group>"; };
+		858F16B42ACB97A1002B64C1 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +103,19 @@
 				4453BF7C2ACA0ADE0017F04B /* WalletViewController.swift */,
 			);
 			path = WalletView;
+		1129A8882ACB5DF00054E020 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1129A8892ACB5E990054E020 /* ProfileScreenController.swift */,
+				1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
+				11433FBD2ABCBCDD005AA716 /* .gitignore */,
 				858F15742ABB99B4002B64C1 /* README.md */,
 				858F15412ABB77F0002B64C1 /* PowerUp */,
 				858F15582ABB77F1002B64C1 /* PowerUpTests */,
@@ -116,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				4453BF792ACA0A2A0017F04B /* WalletView */,
+				1129A8882ACB5DF00054E020 /* ProfileScreen */,
+				858F16B12ACB9777002B64C1 /* Time Screen */,
+				858F16AC2ACA7338002B64C1 /* Store Screen */,
 				858F15422ABB77F0002B64C1 /* AppDelegate.swift */,
 				858F15442ABB77F0002B64C1 /* SceneDelegate.swift */,
 				858F15462ABB77F0002B64C1 /* ViewController.swift */,
@@ -142,6 +167,24 @@
 				858F15652ABB77F1002B64C1 /* PowerUpUITestsLaunchTests.swift */,
 			);
 			path = PowerUpUITests;
+			sourceTree = "<group>";
+		};
+		858F16AC2ACA7338002B64C1 /* Store Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858F16AD2ACA7357002B64C1 /* StoreViewController.swift */,
+				858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */,
+			);
+			path = "Store Screen";
+			sourceTree = "<group>";
+		};
+		858F16B12ACB9777002B64C1 /* Time Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858F16B22ACB978C002B64C1 /* TimeScreen.swift */,
+				858F16B42ACB97A1002B64C1 /* TimeViewController.swift */,
+			);
+			path = "Time Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */,
 				858F154F2ABB77F1002B64C1 /* LaunchScreen.storyboard in Resources */,
 				858F154C2ABB77F1002B64C1 /* Assets.xcassets in Resources */,
 				858F15752ABB99B4002B64C1 /* README.md in Resources */,
@@ -276,9 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				4453BF7B2ACA0AC30017F04B /* WalletView.swift in Sources */,
+				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
+				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
+				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
+				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
+				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
 				4453BF7D2ACA0ADE0017F04B /* WalletViewController.swift in Sources */,
 			);
