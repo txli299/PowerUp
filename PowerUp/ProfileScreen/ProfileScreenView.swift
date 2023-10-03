@@ -156,6 +156,7 @@ class ProfileScreenView: UIView {
 
         forgetButton.setTitleColor(.white, for: .normal)
         self.addSubview(forgetButton)
+        // Register Button
         registerButton = UIButton()
         registerButton.setTitle("Register", for: .normal)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
