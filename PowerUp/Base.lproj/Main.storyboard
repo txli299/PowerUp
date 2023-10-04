@@ -11,17 +11,30 @@
         <!--Time View Controller-->
         <scene sceneID="SQB-2h-pR1">
             <objects>
+<<<<<<< HEAD
                 <viewController id="Prk-14-EvZ" customClass="TimeViewController" customModule="PowerUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKG-lo-12L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="au2-oS-n0M"/>
+=======
+                               <viewController id="Prk-14-EvZ" customClass="TimeViewController" customModule="PowerUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKG-lo-12L">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                         <viewLayoutGuide key="safeArea" id="au2-oS-n0M"/>
+>>>>>>> main
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KD-6c-oJl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="-603" y="2"/>
+=======
+
+             <point key="canvasLocation" x="-603" y="2"/>
+>>>>>>> main
         </scene>
     </scenes>
     <resources>
