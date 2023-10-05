@@ -345,6 +345,8 @@
 				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
+				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
+				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
