@@ -24,6 +24,10 @@
 		858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */; };
 		858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B22ACB978C002B64C1 /* TimeScreen.swift */; };
 		858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16B42ACB97A1002B64C1 /* TimeViewController.swift */; };
+		858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C12ACE60A6002B64C1 /* WalletViewController.swift */; };
+		858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C22ACE60A6002B64C1 /* WalletView.swift */; };
+		858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C62ACE60C6002B64C1 /* StartScreenController.swift */; };
+		858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C72ACE60C6002B64C1 /* StartScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScreen.swift; sourceTree = "<group>"; };
 		858F16B22ACB978C002B64C1 /* TimeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreen.swift; sourceTree = "<group>"; };
 		858F16B42ACB97A1002B64C1 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		858F16C12ACE60A6002B64C1 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		858F16C22ACE60A6002B64C1 /* WalletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		858F16C62ACE60C6002B64C1 /* StartScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
+		858F16C72ACE60C6002B64C1 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,8 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
+				858F16C52ACE60C6002B64C1 /* Start Screen */,
+				858F16C02ACE60A6002B64C1 /* WalletView */,
 				1129A8882ACB5DF00054E020 /* ProfileScreen */,
 				858F16B12ACB9777002B64C1 /* Time Screen */,
 				858F16AC2ACA7338002B64C1 /* Store Screen */,
@@ -173,6 +183,24 @@
 				858F16B42ACB97A1002B64C1 /* TimeViewController.swift */,
 			);
 			path = "Time Screen";
+			sourceTree = "<group>";
+		};
+		858F16C02ACE60A6002B64C1 /* WalletView */ = {
+			isa = PBXGroup;
+			children = (
+				858F16C12ACE60A6002B64C1 /* WalletViewController.swift */,
+				858F16C22ACE60A6002B64C1 /* WalletView.swift */,
+			);
+			path = WalletView;
+			sourceTree = "<group>";
+		};
+		858F16C52ACE60C6002B64C1 /* Start Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858F16C62ACE60C6002B64C1 /* StartScreenController.swift */,
+				858F16C72ACE60C6002B64C1 /* StartScreen.swift */,
+			);
+			path = "Start Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +340,13 @@
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
+				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
+				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
+				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
+				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
 			);
