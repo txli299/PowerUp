@@ -58,21 +58,21 @@ class StartScreen: UIView {
         
         startLabel = UILabel()
         startLabel.text = "Start from here"
-        startLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        startLabel.font = UIFont.boldSystemFont(ofSize: 26)
         startLabel.textColor = UIColor.white
         startLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // credit label
         creditLabel = UILabel()
         creditLabel.text = "Credit Available:"
-        creditLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        creditLabel.font = UIFont.boldSystemFont(ofSize: 22)
         creditLabel.textColor = UIColor.white
         creditLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // credit figure label
         creditFigureLabel = UILabel()
         creditFigureLabel.text = "$100.00"
-        creditFigureLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        creditFigureLabel.font = UIFont.boldSystemFont(ofSize: 22)
         creditFigureLabel.textColor = UIColor.white
         creditFigureLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -161,10 +161,10 @@ class StartScreen: UIView {
         NSLayoutConstraint.activate([
             startView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor), // Leading constraint to the left edge
             startView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor), // Trailing constraint to the right edge
-            startView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0), // Adjust top spacing as needed
+            startView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0), // Adjust top spacing as needed
             startView.heightAnchor.constraint(equalToConstant: 200),
             
-            startLabel.topAnchor.constraint(equalTo: startView.topAnchor, constant: 32),
+            startLabel.topAnchor.constraint(equalTo: startView.topAnchor, constant: 70),
             startLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             
             creditLabel.topAnchor.constraint(equalTo: startLabel.bottomAnchor, constant: 16),

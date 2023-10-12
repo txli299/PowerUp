@@ -131,10 +131,10 @@ class StoreScreen: UIView {
         NSLayoutConstraint.activate([
             viewStar.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             viewStar.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            viewStar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: -100),
-            viewStar.heightAnchor.constraint(equalToConstant: 260),
+            viewStar.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            viewStar.heightAnchor.constraint(equalToConstant: 200),
             
-            labelStart.topAnchor.constraint(equalTo: viewStar.topAnchor, constant: 100),
+            labelStart.topAnchor.constraint(equalTo: viewStar.topAnchor, constant: 70),
             labelStart.leadingAnchor.constraint(equalTo: viewStar.leadingAnchor, constant: 16),
             
             buttonLocation.topAnchor.constraint(equalTo: labelStart.topAnchor, constant: 60),
