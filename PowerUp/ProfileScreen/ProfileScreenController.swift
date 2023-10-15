@@ -9,21 +9,18 @@ import UIKit
 
 class ProfileScreenController: UIViewController {
     
+    //MARK: initializing the First Screen View...
+    let profileScreen = ProfileScreenView()
+    
+    //MARK: add the view to this controller while the view is loading...
+    override func loadView() {
+        view = profileScreen
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
