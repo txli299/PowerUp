@@ -19,7 +19,8 @@ class TimeScreen: UIView {
     var additionalInfoContainer: UIView!
     var timeLeftLabel: UILabel!
     
-    
+    let customButtonColor = UIColor(red: 0.45, green: 0.72, blue: 1, alpha: 1.0)
+    let customStartBgk = UIColor(red: 0.035, green: 0.51, blue: 0.89, alpha: 1.0)
     
     override init(frame: CGRect) {
         
@@ -42,9 +43,10 @@ class TimeScreen: UIView {
     func setButton(){
         addButton = UIButton()
         addButton.setTitle("+ Add Time", for: .normal)
-        addButton.backgroundColor = .blue
-        addButton.layer.cornerRadius = 5
+        addButton.backgroundColor = customButtonColor
+        addButton.layer.cornerRadius = 20
         addButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.setTitleColor(UIColor.white, for: .normal)
         additionalInfoContainer.addSubview(addButton)
         
     }
@@ -60,20 +62,22 @@ class TimeScreen: UIView {
     }
     func setUpAdditionalInfoContainer() {
         additionalInfoContainer = UIView()
-        additionalInfoContainer.backgroundColor = .white
-        additionalInfoContainer.layer.borderColor = UIColor.black.cgColor
-        additionalInfoContainer.layer.borderWidth = 1.0
+        additionalInfoContainer.backgroundColor = UIColor.white
         additionalInfoContainer.layer.cornerRadius = 10
+        additionalInfoContainer.layer.shadowColor = UIColor.black.cgColor
+        additionalInfoContainer.layer.shadowOpacity = 0.5
+        additionalInfoContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
+        additionalInfoContainer.layer.shadowRadius = 4
         additionalInfoContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         containerTop.addSubview(additionalInfoContainer)
     }
     func setUpInfoContainer(){
         infoContainer = UIView()
-        let lightBlue = UIColor(red: 173/255, green: 216/255, blue: 230/255, alpha: 1.0)
-        infoContainer.backgroundColor = lightBlue // Change color if needed
+        infoContainer.backgroundColor = customButtonColor  // Change color if needed
         infoContainer.layer.cornerRadius = 10 // Adjust the corner radius as needed
         infoContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(infoContainer)
+        containerTop.addSubview(infoContainer)
     }
     
     func setUpLabels(){
@@ -102,7 +106,7 @@ class TimeScreen: UIView {
     func setUpTopContainer(){
         
         containerTop = UIView()
-        containerTop.backgroundColor = .blue
+        containerTop.backgroundColor = customStartBgk
         containerTop.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(containerTop)
     }
@@ -110,7 +114,7 @@ class TimeScreen: UIView {
     func setMyTime(){
         myTimeLabel = UILabel()
         myTimeLabel.text = "My Time"
-        myTimeLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold) // Customize font and size if needed
+        myTimeLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold) // Customize font and size if needed
         myTimeLabel.textColor = .white
         myTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(myTimeLabel)
@@ -134,28 +138,26 @@ class TimeScreen: UIView {
             containerTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             containerTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             containerTop.topAnchor.constraint(equalTo: self.topAnchor),
-            containerTop.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
+            containerTop.heightAnchor.constraint(equalToConstant: 200),
             
             myTimeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16), // Adjust the constant as needed
-            myTimeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant:64), // Adjust the constant as needed
+            myTimeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant:70), // Adjust the constant as needed
             
             //all together
-            infoContainer.widthAnchor.constraint(equalToConstant: 375), // Set the desired width
-            infoContainer.heightAnchor.constraint(equalToConstant: 75), // Set the desired height
-            infoContainer.centerXAnchor.constraint(equalTo: containerTop.centerXAnchor), // Center horizontally
-            infoContainer.centerYAnchor.constraint(equalTo: containerTop.centerYAnchor, constant: 30), // Center verticall
-            
+            infoContainer.heightAnchor.constraint(equalToConstant: 65), // Set the desired height
+            infoContainer.topAnchor.constraint(equalTo: myTimeLabel.bottomAnchor, constant: 16),
+            infoContainer.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            infoContainer.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             bestCafeLabel.leadingAnchor.constraint(equalTo: infoContainer.leadingAnchor, constant: 8),
             bestCafeLabel.topAnchor.constraint(equalTo: infoContainer.topAnchor, constant: 8),
             
             mainStreetLabel.leadingAnchor.constraint(equalTo: infoContainer.leadingAnchor, constant: 8),
             mainStreetLabel.topAnchor.constraint(equalTo: bestCafeLabel.bottomAnchor, constant: 4),
             //all together
-            
-            additionalInfoContainer.widthAnchor.constraint(equalToConstant: 375), // Set the desired width
+            additionalInfoContainer.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            additionalInfoContainer.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             additionalInfoContainer.heightAnchor.constraint(equalToConstant: 175), // Set the desired height
-            additionalInfoContainer.centerXAnchor.constraint(equalTo: containerTop.centerXAnchor),
-            additionalInfoContainer.centerYAnchor.constraint(equalTo: containerTop.bottomAnchor, constant: 40),
+            additionalInfoContainer.topAnchor.constraint(equalTo: containerTop.bottomAnchor, constant: -10),
             
             pcLabel.leadingAnchor.constraint(equalTo: additionalInfoContainer.leadingAnchor, constant: 8),
             pcLabel.topAnchor.constraint(equalTo: additionalInfoContainer.topAnchor, constant: 8),
@@ -166,8 +168,8 @@ class TimeScreen: UIView {
             addButton.centerXAnchor.constraint(equalTo: additionalInfoContainer.centerXAnchor),
 //            addButton.centerYAnchor.constraint(equalTo: additionalInfoContainer.centerYAnchor),
             addButton.bottomAnchor.constraint(equalTo: additionalInfoContainer.bottomAnchor, constant: -20), // Adjust the constant to position the button higher or lower
-            addButton.widthAnchor.constraint(equalToConstant: 100),
-            addButton.heightAnchor.constraint(equalToConstant: 30)
+            addButton.widthAnchor.constraint(equalToConstant: 160),
+            addButton.heightAnchor.constraint(equalToConstant: 40),
 
 
         ])

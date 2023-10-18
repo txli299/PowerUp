@@ -8,7 +8,12 @@
 import UIKit
 
 class ProfileScreenController: UIViewController {
+    let profileScreen = ProfileScreenView()
     
+    override func loadView() {
+        view = profileScreen
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
