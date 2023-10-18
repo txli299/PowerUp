@@ -19,6 +19,7 @@ class ProfileScreenView: UIView {
     var forgetButton: UIButton!
     var registerButton: UIButton!
     let customStartBgk = UIColor(red: 0.035 , green: 0.51 , blue: 0.89, alpha: 1.0)
+    let customButtonColor = UIColor(red: 0.45 , green: 0.72 , blue: 1, alpha: 1.0)
     let midBgkColor = UIColor(red: 0.9882, green: 0.9882, blue: 0.9882, alpha: 1.0)
     /*
     // Only override draw() if you perform custom drawing.
@@ -35,9 +36,10 @@ class ProfileScreenView: UIView {
         
             
         //MARK: initializing the UI elements and constraints...
-        setupVariables()
+        
         setupStartComponent()
         setupMidComponent()
+        setupVariables()
         initConstraints()
             
     }
@@ -57,12 +59,13 @@ class ProfileScreenView: UIView {
     
     func setupMidComponent(){
         midView = UIView()
-        midView.backgroundColor = midBgkColor
+        midView.backgroundColor = UIColor.white
+        midView.layer.cornerRadius = 10
         midView.layer.shadowColor = UIColor.black.cgColor
         midView.layer.shadowOpacity = 0.5
-        midView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        midView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        midView.layer.shadowRadius = 4
         midView.translatesAutoresizingMaskIntoConstraints = false
-        midView.layer.cornerRadius = 10
         midView.layer.zPosition = -50
         self.addSubview(midView)
     }
@@ -76,15 +79,15 @@ class ProfileScreenView: UIView {
             
             midView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 30),
             midView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            midView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 110),
+            midView.topAnchor.constraint(equalTo: startView.bottomAnchor, constant: -40),
             midView.heightAnchor.constraint(equalToConstant: 350),
-            loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
+            loginLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 70),
             loginLabel.leadingAnchor.constraint(equalTo:
-            self.safeAreaLayoutGuide.leadingAnchor, constant:5),
+            self.safeAreaLayoutGuide.leadingAnchor, constant:16),
             loginLabel.trailingAnchor.constraint(equalTo:
             self.safeAreaLayoutGuide.trailingAnchor,constant: -16),
             
-            userNameLabel.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 100),
+            userNameLabel.topAnchor.constraint(equalTo: midView.topAnchor, constant: 16),
             userNameLabel.leadingAnchor.constraint(equalTo:self.safeAreaLayoutGuide.leadingAnchor, constant:50 ),
             userNameTextField.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 20),
             userNameTextField.leadingAnchor.constraint(equalTo:self.safeAreaLayoutGuide.leadingAnchor, constant:50 ),
@@ -113,49 +116,51 @@ class ProfileScreenView: UIView {
         userNameLabel.font = UIFont.systemFont(ofSize: 18)
         userNameLabel.textColor = .black
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(userNameLabel)
+        midView.addSubview(userNameLabel)
         //Password Label
         passWordLabel = UILabel()
         passWordLabel.text = "Password"
         passWordLabel.font = UIFont.systemFont(ofSize: 18)
         passWordLabel.textColor = .black
         passWordLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(passWordLabel)
+        midView.addSubview(passWordLabel)
         //Login Label
         loginLabel = UILabel()
         loginLabel.text = "Log in"
-        loginLabel.font = UIFont.systemFont(ofSize: 24)
+        loginLabel.font = UIFont.boldSystemFont(ofSize: 26)
         loginLabel.textColor = .white
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(loginLabel)
+        startView.addSubview(loginLabel)
         //UserName TextField
         userNameTextField = UITextField()
         userNameTextField.placeholder = "Enter Username"
         userNameTextField.borderStyle = .roundedRect
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(userNameTextField)
+        midView.addSubview(userNameTextField)
         passWordTextField = UITextField()
         passWordTextField.placeholder = "Enter Password"
         passWordTextField.borderStyle = .roundedRect
         passWordTextField.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(passWordTextField)
+        midView.addSubview(passWordTextField)
         loginButton = UIButton()
         loginButton.setTitle("Login", for: .normal)
-        loginButton.backgroundColor = .blue
-        loginButton.clipsToBounds = true
-        loginButton.layer.cornerRadius = 5
+        loginButton.backgroundColor = customButtonColor
+        loginButton.setTitleColor(UIColor.white, for: .normal)
+        loginButton.layer.cornerRadius = 20
         loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.setTitleColor(.white, for: .normal)
-        self.addSubview(loginButton)
+
+        midView.addSubview(loginButton)
         forgetButton = UIButton()
         forgetButton.setTitle("Forget", for: .normal)
-        forgetButton.backgroundColor = .blue
+        forgetButton.backgroundColor = customButtonColor
         forgetButton.clipsToBounds = true
-        forgetButton.layer.cornerRadius = 5
+        forgetButton.setTitleColor(UIColor.white, for: .normal)
+        forgetButton.layer.cornerRadius = 20
         forgetButton.translatesAutoresizingMaskIntoConstraints = false
 
         forgetButton.setTitleColor(.white, for: .normal)
-        self.addSubview(forgetButton)
+        midView.addSubview(forgetButton)
+        // Register Button
         registerButton = UIButton()
         registerButton.setTitle("Register", for: .normal)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
