@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCSuU4LXRN4zjKjxag-C6yqfh7NKr7xdoM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>841008832045</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.gomobile.PowerUp</string>
+	<key>PROJECT_ID</key>
+	<string>powerup-c7721</string>
+	<key>STORAGE_BUCKET</key>
+	<string>powerup-c7721.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:841008832045:ios:0457f796716d6b2820a2a4</string>
+</dict>
+</plist>
