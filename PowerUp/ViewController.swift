@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class ViewController: UITabBarController, UITabBarControllerDelegate {
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,13 +74,6 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
         //MARK: setting up this view controller as the Tab Bar Controller...
         self.viewControllers = [tabStore, tabStart, tabWallet, tabTime, tabProfile]
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Dingbang First Commit check, second check
-    }
     
     
-
 }
-
