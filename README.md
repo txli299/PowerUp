@@ -11,7 +11,7 @@ With our PowerUp app, all this can be accomplished and more!
 ## About The Project
 
 <p align="center">
-  <img src="Images/PowerUp.pdf.jpg" alt="Power Up" width="300">
+  <img src="Images/PowerUp.pdf.jpg" alt="Power Up" width="1000" height = "1000">
 </p>
 
 ## Application Usage
