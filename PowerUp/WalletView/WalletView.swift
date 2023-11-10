@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import StripePaymentsUI
+
 
 class WalletView: UIView {
     
@@ -62,6 +64,24 @@ class WalletView: UIView {
         return button
     }()
     
+    // card text field
+    lazy var stripeCardTextField: STPPaymentCardTextField = {
+        let cardTextField = STPPaymentCardTextField()
+                return cardTextField
+    }()
+    
+    // credit card pay button
+    lazy var stripePayButton: UIButton = {
+            let button = UIButton(type: .custom)
+            button.layer.cornerRadius = 5
+            button.backgroundColor = .systemBlue
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+            button.setTitle("Add", for: .normal)
+            button.addTarget(self, action: #selector(pay), for: .touchUpInside)
+            return button
+        }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -85,6 +105,8 @@ class WalletView: UIView {
         addSubview(balanceCard)
         balanceCard.addSubview(balanceLabel)
         addSubview(addFundsButton)
+        addSubview(stripeCardTextField)
+        addSubview(stripePayButton)
         
         NSLayoutConstraint.activate([
             headerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -101,7 +123,18 @@ class WalletView: UIView {
             addFundsButton.topAnchor.constraint(equalTo: balanceCard.bottomAnchor, constant: 40),
             addFundsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addFundsButton.widthAnchor.constraint(equalToConstant: 160),
-            addFundsButton.heightAnchor.constraint(equalToConstant: 50)
+            addFundsButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            stripeCardTextField.topAnchor.constraint(equalTo: addFundsButton.bottomAnchor, constant: 40),
+            stripeCardTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stripeCardTextField.widthAnchor.constraint(equalToConstant: 160),
+            stripeCardTextField.heightAnchor.constraint(equalToConstant: 50),
+            
+            stripePayButton.topAnchor.constraint(equalTo: stripeCardTextField.bottomAnchor, constant: 40),
+            stripePayButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stripePayButton.widthAnchor.constraint(equalToConstant: 160),
+            stripePayButton.heightAnchor.constraint(equalToConstant: 50),
+            
         ])
     }
 }

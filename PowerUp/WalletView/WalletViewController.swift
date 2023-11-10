@@ -7,6 +7,7 @@
 
 
 import UIKit
+import StripePaymentsUI
 
 class WalletViewController: UIViewController {
     

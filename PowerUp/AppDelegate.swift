@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseCore
+import StripePaymentsUI
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        StripeAPI.defaultPublishableKey = "pk_test_51OB0l7F2tt1p5w5CTV5YqNWylEtTX6e4osXu4e2lFGzAyhbs80fuDB9htGRPFjcGuOE32hMs1NwDtOsT5YiNdC5T00vE6IYaGW"
         return true
     }
 
