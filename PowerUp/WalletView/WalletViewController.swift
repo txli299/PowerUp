@@ -13,7 +13,10 @@ class WalletViewController: UIViewController {
     
     private let walletView = WalletView()
     
-    var paymentIntentClientSecret: String?
+    let notificationCenter = NotificationCenter.default
+    
+    let checkoutController = CheckOutViewController()
+    var checkoutNavController: UINavigationController!
 
     override func loadView() {
         view = walletView
@@ -21,9 +24,31 @@ class WalletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        walletView.addFundsButton.addTarget(self, action: #selector(addFundsTapped), for: .touchUpInside)
+
+        walletView.addFundsButton.addTarget(self, action: #selector(onFindButtonTapped), for: .touchUpInside)
         walletView.stripePayButton.addTarget(self, action: #selector(pay), for: .touchUpInside)
-        startCheckout()
+        
+        observeAmountSelected()
+    }
+    
+    //MARK: Observe if the user selected a name from bottom sheet...
+    func observeAmountSelected(){
+            notificationCenter.addObserver(
+                self,
+                selector: #selector(onAmountSelected(notification:)),
+                name: Notification.Name("selectedAmount"), object: nil)
+        }
+    
+    @objc func onAmountSelected(notification: Notification){
+            if let selectedAmount = notification.object{
+                walletView.balanceLabel.text = selectedAmount as! String
+            }
+    }
+    
+    //get current balance by pinging backend endpoint
+    func getCurrentBalance(){
+        //get current balance
+        //then update walletView.balanceLabel
     }
     
     // shows stripe card component
@@ -37,44 +62,22 @@ class WalletViewController: UIViewController {
     
     @objc func pay() {
         print("Stripe Button: I was clicked!")
-        
-        guard let paymentIntentClientSecret = paymentIntentClientSecret else {
-                    return
-                }
-                 //Collect card details
-                let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
-                paymentIntentParams.paymentMethodParams = walletView.stripeCardTextField.paymentMethodParams
-//                print(walletView.stripeCardTextField.paymentMethodParams.card)
-
-                // Submit the payment
-                let paymentHandler = STPPaymentHandler.shared()
-                paymentHandler.confirmPayment(paymentIntentParams, with: self) { (status, paymentIntent, error) in
-                    switch (status) {
-                    case .failed:
-                        self.displayAlert(title: "Payment failed")
-                        break
-                    case .canceled:
-                        self.displayAlert(title: "Payment canceled")
-                        break
-                    case .succeeded:
-                        self.displayAlert(title: "Payment succeeded")
-                        break
-                    @unknown default:
-                        fatalError()
-                        break
-                    }
-                }
-        }
-    
-    func startCheckout() {
-          // Request a PaymentIntent from your server and store its client secret
-          // Click View full sample to see a complete implementation
-      }
-    
-}
-
-extension WalletViewController: STPAuthenticationContext {
-    func authenticationPresentingViewController() -> UIViewController {
-        return self
+//        print(walletView.stripeCardTextField.paymentMethodParams.card)
     }
+
+    func setupCheckoutBottomSheet(){
+        checkoutNavController = UINavigationController(rootViewController: checkoutController)
+        checkoutNavController.modalPresentationStyle = .pageSheet
+                
+        if let bottomCheckoutSheet = checkoutNavController.sheetPresentationController{
+            bottomCheckoutSheet.detents = [.medium(), .large()]
+            bottomCheckoutSheet.prefersGrabberVisible = true
+        }
+    }
+    
+    @objc func onFindButtonTapped(){
+        setupCheckoutBottomSheet()
+        present(checkoutNavController, animated: true)
+       }
+    
 }
