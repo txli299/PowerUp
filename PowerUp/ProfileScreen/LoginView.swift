@@ -1,5 +1,5 @@
 //
-//  ProfileScreenView.swift
+//  LoginView.swift
 //  PowerUp
 //
 //  Created by Dingbang Chen on 10/2/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileScreenView: UIView {
+class LoginView: UIView {
     var startView: UIView!
     var midView:UIView!
     var userNameLabel: UILabel!

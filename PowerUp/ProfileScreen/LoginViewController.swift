@@ -8,10 +8,10 @@
 import UIKit
 import FirebaseAuth
 class ProfileScreenController: UIViewController {
-    let profileScreen = ProfileScreenView()
+    let loginView = LoginView()
     
     override func loadView() {
-        view = profileScreen
+        view = loginView
     }
 
     func alert(message:String){
@@ -49,9 +49,9 @@ class ProfileScreenController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        profileScreen.loginButton.addTarget(self, action: #selector(onButtonSigninTapped), for: .touchUpInside)
-        profileScreen.registerButton.addTarget(self, action: #selector(onButtonRegisterTapped), for: .touchUpInside)
+            super.viewDidLoad()
+            loginView.loginButton.addTarget(self, action: #selector(onButtonSigninTapped), for: .touchUpInside)
+            loginView.registerButton.addTarget(self, action: #selector(onButtonRegisterTapped), for: .touchUpInside)
     }
     
     @objc func onButtonRegisterTapped(){
@@ -60,8 +60,8 @@ class ProfileScreenController: UIViewController {
     }
     
     @objc func onButtonSigninTapped(){
-        guard let email = profileScreen.userNameTextField.text, !email.isEmpty,
-              let password = profileScreen.passWordTextField.text, !password.isEmpty else{
+        guard let email = loginView.userNameTextField.text, !email.isEmpty,
+              let password = loginView.passWordTextField.text, !password.isEmpty else{
             alert(message: "Please fill all fields")
             return
         }
