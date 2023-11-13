@@ -12,9 +12,7 @@ class CheckOutViewController: UIViewController {
     let checkoutScreen = CheckOutView()
     
     let amounts = ["10", "15", "20", "25"]
-    
-//    var delegate: WalletViewController!
-    
+        
     var selectedAmount = "10"
     
     override func loadView() {
@@ -28,7 +26,6 @@ class CheckOutViewController: UIViewController {
         checkoutScreen.pickerType.dataSource = self
         checkoutScreen.pickerType.delegate = self
         
-//        walletView.stripePayButton.addTarget(self, action: #selector(pay), for: .touchUpInside)
         checkoutScreen.addButton.addTarget(self, action: #selector(checkOut), for: .touchUpInside)
 
     }
