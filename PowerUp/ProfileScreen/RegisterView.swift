@@ -16,9 +16,13 @@ class RegisterView: UIView {
     var passWordTextField: UITextField!
     var signupLabel: UILabel!
     var signupButton: UIButton!
+    
+    var backButton: UIButton!
+    
     let customStartBgk = UIColor(red: 0.035 , green: 0.51 , blue: 0.89, alpha: 1.0)
     let customButtonColor = UIColor(red: 0.45 , green: 0.72 , blue: 1, alpha: 1.0)
     let midBgkColor = UIColor(red: 0.9882, green: 0.9882, blue: 0.9882, alpha: 1.0)
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -32,7 +36,6 @@ class RegisterView: UIView {
             
         self.backgroundColor = .white
         
-            
         //MARK: initializing the UI elements and constraints...
         
         setupStartComponent()
@@ -98,7 +101,11 @@ class RegisterView: UIView {
             signupButton.leadingAnchor.constraint(equalTo:self.safeAreaLayoutGuide.leadingAnchor, constant:50 ),
             signupButton.widthAnchor.constraint(equalToConstant: 120),
             signupButton.heightAnchor.constraint(equalToConstant: 50),
+            
             ])
+        backButton.leadingAnchor.constraint(equalTo: midView.leadingAnchor).isActive = true
+        backButton.topAnchor.constraint(equalTo: midView.bottomAnchor, constant: 10).isActive = true
+
     }
         
     func setupVariables(){
@@ -142,6 +149,10 @@ class RegisterView: UIView {
         signupButton.translatesAutoresizingMaskIntoConstraints = false
 
         midView.addSubview(signupButton)
+        
+        backButton = UIButton(type: .system)
+        backButton.setTitle("Back", for: .normal)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(backButton)
     }
-
 }

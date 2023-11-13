@@ -17,12 +17,12 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         registerView.signupButton.addTarget(self, action: #selector(onButtonSignupTapped), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target:self , action: #selector(onButtonBackTapped))
-        
+        registerView.backButton.addTarget(self, action: #selector(onButtonBackTapped), for: .touchUpInside)
+
     }
     
-    @objc func onButtonBackTapped(){
-        let ProfileVC = ProfileScreenController()
-        navigationController?.pushViewController(ProfileVC, animated: true)
+    @objc func onButtonBackTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func alert(message:String){
@@ -80,8 +80,27 @@ class RegisterViewController: UIViewController {
                 return
             }
             strongSelf.successMsg()
-            let profileVC = ProfileScreenController()
+            
+            let profileVC = LoginViewController()
             strongSelf.navigationController?.pushViewController(profileVC, animated: true)
+            
+            // to json - UserService - After successful registration or login
+            if let userID = result?.user.uid, let email = result?.user.email {
+                let userDetailsJSON = UserService.createUserJSON(uid: userID, email: email)
+                UserService.postUserDetails(userDetails: userDetailsJSON) { success, error in
+                    DispatchQueue.main.async {
+                        if success {
+                            print("User details successfully posted to the server.")
+                            // Handle success - perhaps by transitioning to the profile view or showing a success message
+                        } else {
+                            print("Failed to post user details with error: \(error?.localizedDescription ?? "Unknown error")")
+                            // Handle failure - show an alert to the user or log the error
+                        }
+                    }
+                }
+            }
+
         })
+        self.dismiss(animated: true, completion: nil)
     }
 }
