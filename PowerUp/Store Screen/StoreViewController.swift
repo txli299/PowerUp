@@ -52,7 +52,7 @@ class StoreViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func displayCafes() {
-        let alertController = UIAlertController(title: "Choose a Cafe", message: "Select a cafe to populate its name in the location bar.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Choose a Cafe", message: "Cafe's are shown in order of closest distance to the user.", preferredStyle: .alert)
 
         // Get the two closest cafes, but check if there are any cafes at all
         let closestCafes = cafes.prefix(2)
