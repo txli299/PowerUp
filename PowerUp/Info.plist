@@ -24,6 +24,6 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>We need your location to provide you with the nearest internet cafe.</string>
+	<string>We need your location to provide you with the nearest internet cafe.</string>
 </dict>
 </plist>

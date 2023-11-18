@@ -28,6 +28,11 @@
 		858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C22ACE60A6002B64C1 /* WalletView.swift */; };
 		858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C62ACE60C6002B64C1 /* StartScreenController.swift */; };
 		858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C72ACE60C6002B64C1 /* StartScreen.swift */; };
+		B1E80CDC2B095A5D009CBD93 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */; };
+		B1E80CDF2B095B41009CBD93 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CDE2B095B41009CBD93 /* Coordinate.swift */; };
+		B1E80CE12B095B5A009CBD93 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE02B095B5A009CBD93 /* Machine.swift */; };
+		B1E80CE32B095B69009CBD93 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE22B095B69009CBD93 /* Cafe.swift */; };
+		B1E80CE52B0976D6009CBD93 /* CafeWithDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		858F16C22ACE60A6002B64C1 /* WalletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		858F16C62ACE60C6002B64C1 /* StartScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		858F16C72ACE60C6002B64C1 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B1E80CDE2B095B41009CBD93 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		B1E80CE02B095B5A009CBD93 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		B1E80CE22B095B69009CBD93 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeWithDistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,7 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
+				B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */,
 				858F16C52ACE60C6002B64C1 /* Start Screen */,
 				858F16C02ACE60A6002B64C1 /* WalletView */,
 				1129A8882ACB5DF00054E020 /* ProfileScreen */,
@@ -170,6 +181,7 @@
 		858F16AC2ACA7338002B64C1 /* Store Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B1E80CDD2B095AC7009CBD93 /* Data Models */,
 				858F16AD2ACA7357002B64C1 /* StoreViewController.swift */,
 				858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */,
 			);
@@ -201,6 +213,17 @@
 				858F16C72ACE60C6002B64C1 /* StartScreen.swift */,
 			);
 			path = "Start Screen";
+			sourceTree = "<group>";
+		};
+		B1E80CDD2B095AC7009CBD93 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1E80CDE2B095B41009CBD93 /* Coordinate.swift */,
+				B1E80CE02B095B5A009CBD93 /* Machine.swift */,
+				B1E80CE22B095B69009CBD93 /* Cafe.swift */,
+				B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,8 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1E80CE32B095B69009CBD93 /* Cafe.swift in Sources */,
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
+				B1E80CE52B0976D6009CBD93 /* CafeWithDistance.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
@@ -351,6 +376,9 @@
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
+				B1E80CDF2B095B41009CBD93 /* Coordinate.swift in Sources */,
+				B1E80CDC2B095A5D009CBD93 /* MapViewController.swift in Sources */,
+				B1E80CE12B095B5A009CBD93 /* Machine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

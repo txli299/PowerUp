@@ -81,7 +81,7 @@ class StoreScreen: UIView {
         labelPCName.translatesAutoresizingMaskIntoConstraints = false
         
         labelPCAvailability = UILabel()
-        labelPCAvailability.text = "8/10"
+        labelPCAvailability.text = "0/0"
         labelPCAvailability.font = UIFont.systemFont(ofSize: 16)
         labelPCAvailability.translatesAutoresizingMaskIntoConstraints = false
         
@@ -114,7 +114,7 @@ class StoreScreen: UIView {
         labelPSName.translatesAutoresizingMaskIntoConstraints = false
         
         labelPSAvailability = UILabel()
-        labelPSAvailability.text = "8/10"
+        labelPSAvailability.text = "0/0"
         labelPSAvailability.font = UIFont.systemFont(ofSize: 16)
         labelPSAvailability.translatesAutoresizingMaskIntoConstraints = false
         
