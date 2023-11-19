@@ -9,24 +9,32 @@ import UIKit
 
 class ProfileView: UIView {
     
+    var startView: UIView!
     let profileImageView = UIImageView()
     let nameLabel = UILabel()
     let emailLabel = UILabel()
     let versionLabel = UILabel()
     let signOutButton = UIButton()
     let deleteAccountButton = UIButton()
+    var headLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupView() {
+        // Create and style the startView similar to LoginView
+        startView = UIView()
+        startView.backgroundColor = UIColor(red: 0.035, green: 0.51, blue: 0.89, alpha: 1.0) // Use the same color as in LoginView
+        startView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(startView)
+
         backgroundColor = .white
         
         profileImageView.contentMode = .scaleAspectFill
@@ -60,8 +68,25 @@ class ProfileView: UIView {
         addSubview(deleteAccountButton)
     }
     
+    func setupVariables(){
+        //Sign Up Label
+        headLabel = UILabel()
+        headLabel.text = "Welcom"
+        headLabel.font = UIFont.boldSystemFont(ofSize: 26)
+        headLabel.textColor = .white
+        headLabel.translatesAutoresizingMaskIntoConstraints = false
+        startView.addSubview(headLabel)
+    }
+    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+
+            // Constraints for startView
+            startView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            startView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            startView.topAnchor.constraint(equalTo: self.topAnchor),
+            startView.heightAnchor.constraint(equalToConstant: 200), // Set the height as in LoginView
+                        
             // Profile Image Constraints
             profileImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor),

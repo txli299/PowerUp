@@ -60,10 +60,16 @@ class RegisterViewController: UIViewController {
     }
     
     
-    @objc func onButtonSignupTapped(){
+    @objc func onButtonSignupTapped() {
         guard let email = registerView.userNameTextField.text, !email.isEmpty,
-              let password = registerView.passWordTextField.text, !password.isEmpty else{
+              let password = registerView.passWordTextField.text, !password.isEmpty,
+              let confirmPassword = registerView.confirmPasswordTextField.text, !confirmPassword.isEmpty else {
             alert(message: "Please fill all fields")
+            return
+        }
+
+        if password != confirmPassword {
+            alert(message: "Passwords do not match")
             return
         }
         
