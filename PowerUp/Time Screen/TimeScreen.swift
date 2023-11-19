@@ -13,7 +13,6 @@ class TimeScreen: UIView {
     var myTimeLabel: UILabel!
     var infoContainer: UIView!
     var bestCafeLabel: UILabel!
-    var mainStreetLabel: UILabel!
     var addButton = UIButton()
     var pcLabel: UILabel!
     var additionalInfoContainer: UIView!
@@ -88,19 +87,6 @@ class TimeScreen: UIView {
         bestCafeLabel.translatesAutoresizingMaskIntoConstraints = false
         infoContainer.addSubview(bestCafeLabel)
         
-        mainStreetLabel = UILabel()
-        mainStreetLabel.text = "Main Street"
-        mainStreetLabel.font = UIFont.systemFont(ofSize: 16)
-        mainStreetLabel.textColor = .black
-        mainStreetLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoContainer.addSubview(mainStreetLabel)
-        
-//        pcLabel = UILabel()
-//        pcLabel.text = "PC 1"
-//        pcLabel.font = UIFont.systemFont(ofSize: 12)
-//        pcLabel.textColor = .black
-//        pcLabel.translatesAutoresizingMaskIntoConstraints = false
-//        additionalInfoContainer.addSubview(pcLabel)
     }
     
     func setUpTopContainer(){
@@ -151,8 +137,6 @@ class TimeScreen: UIView {
             bestCafeLabel.leadingAnchor.constraint(equalTo: infoContainer.leadingAnchor, constant: 8),
             bestCafeLabel.topAnchor.constraint(equalTo: infoContainer.topAnchor, constant: 8),
             
-            mainStreetLabel.leadingAnchor.constraint(equalTo: infoContainer.leadingAnchor, constant: 8),
-            mainStreetLabel.topAnchor.constraint(equalTo: bestCafeLabel.bottomAnchor, constant: 4),
             //all together
             additionalInfoContainer.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 30),
             additionalInfoContainer.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
