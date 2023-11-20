@@ -8,8 +8,20 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseAuth
 
 class ViewController: UITabBarController, UITabBarControllerDelegate {
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if FirebaseAuth.Auth.auth().currentUser == nil {
+            let loginVC = LoginViewController()
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: false, completion: nil)
+        }
+    }
+
     
     
     
@@ -59,21 +71,26 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
         tabTime.tabBarItem = tabTimeBarItem
         tabTime.title = "Time"
         
-        //MARK: Setting up Profile Screen
-        let tabProfile = UINavigationController(rootViewController: ProfileScreenController())
-        let tabProfileBarItem = UITabBarItem(
-            title: "Profile",
-            image: UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal),
-            selectedImage: UIImage(systemName: "person.fill")
-        )
-        tabProfile.tabBarItem = tabProfileBarItem
-        tabProfile.title = "Profile"
-        
-        
-        
-        //MARK: setting up this view controller as the Tab Bar Controller...
-        self.viewControllers = [tabStore, tabStart, tabWallet, tabTime, tabProfile]
+        let profileRootVC = FirebaseAuth.Auth.auth().currentUser != nil ? ProfileViewController() : LoginViewController()
+            let tabProfile = UINavigationController(rootViewController: profileRootVC)
+            let tabProfileBarItem = UITabBarItem(
+                title: "Profile",
+                image: UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal),
+                selectedImage: UIImage(systemName: "person.fill")
+            )
+            tabProfile.tabBarItem = tabProfileBarItem
+            tabProfile.title = "Profile"
+            
+            self.viewControllers = [tabStore, tabStart, tabWallet, tabTime, tabProfile]
     }
-    
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Dingbang First Commit check, second check
+    }
+    func userDidLogout() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
+    }
 }
