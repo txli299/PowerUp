@@ -61,7 +61,7 @@ class WalletViewController: UIViewController {
                
     }
     
-    //keep track of uid? keychain?
+    //use keychain to extract uid
     func addBalance(uid: String, userDetails: [String : Any]){
         
         UserCreditService.updateUserDetails(uid: uid, userDetails: userDetails){ success, error in
@@ -77,10 +77,7 @@ class WalletViewController: UIViewController {
         
     }
     
-    //load current balance by pinging backend endpoint
     func loadCurrentBalance(){
-        //get current balance
-        //then update walletView.balanceLabel
         
         //hardcoded userid: change to current user id
         let uid = "6552a2075c0eaa381c2c8c92"
