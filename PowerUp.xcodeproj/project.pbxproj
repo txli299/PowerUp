@@ -10,6 +10,11 @@
 		1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* ProfileScreenController.swift */; };
 		1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
+		33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D0094C2AFECF36004BB2AE /* StripePaymentsUI */; };
+		33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */; };
+		33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD932B02A54500E70B4A /* CheckOutView.swift */; };
+		33E1BD972B02B00500E70B4A /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD962B02B00500E70B4A /* PaymentViewController.swift */; };
+		33E1BD992B02B01D00E70B4A /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD982B02B01D00E70B4A /* PaymentView.swift */; };
 		8583334D2AE0AA9E005540D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8583334C2AE0AA9E005540D6 /* FirebaseAuth */; };
 		8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8583334E2AE0AB4A005540D6 /* RegisterViewController.swift */; };
 		858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858333502AE0AB5F005540D6 /* RegisterView.swift */; };
@@ -55,6 +60,10 @@
 		1129A8892ACB5E990054E020 /* ProfileScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		33E1BD932B02A54500E70B4A /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
+		33E1BD962B02B00500E70B4A /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		33E1BD982B02B01D00E70B4A /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		8583334E2AE0AB4A005540D6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		858333502AE0AB5F005540D6 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		858333522AE0AE07005540D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -87,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */,
 				8583334D2AE0AA9E005540D6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +129,31 @@
 			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
+		33E1BD952B02A54E00E70B4A /* Checkout Screen */ = {
+			isa = PBXGroup;
+			children = (
+				33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */,
+				33E1BD932B02A54500E70B4A /* CheckOutView.swift */,
+			);
+			path = "Checkout Screen";
+			sourceTree = "<group>";
+		};
+		33E1BD9A2B02BEC500E70B4A /* Payment Screen */ = {
+			isa = PBXGroup;
+			children = (
+				33E1BD962B02B00500E70B4A /* PaymentViewController.swift */,
+				33E1BD982B02B01D00E70B4A /* PaymentView.swift */,
+			);
+			path = "Payment Screen";
+			sourceTree = "<group>";
+		};
+		33E211E42AFECA4300DECF22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +163,7 @@
 				858F15582ABB77F1002B64C1 /* PowerUpTests */,
 				858F15622ABB77F1002B64C1 /* PowerUpUITests */,
 				858F15402ABB77F0002B64C1 /* Products */,
+				33E211E42AFECA4300DECF22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +193,8 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
+				33E1BD952B02A54E00E70B4A /* Checkout Screen */,
+				33E1BD9A2B02BEC500E70B4A /* Payment Screen */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -232,6 +270,7 @@
 			name = PowerUp;
 			packageProductDependencies = (
 				8583334C2AE0AA9E005540D6 /* FirebaseAuth */,
+				33D0094C2AFECF36004BB2AE /* StripePaymentsUI */,
 			);
 			productName = PowerUp;
 			productReference = 858F153F2ABB77F0002B64C1 /* PowerUp.app */;
@@ -281,7 +320,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					858F153E2ABB77F0002B64C1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -307,6 +346,7 @@
 			mainGroup = 858F15362ABB77F0002B64C1;
 			packageReferences = (
 				8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
 			);
 			productRefGroup = 858F15402ABB77F0002B64C1 /* Products */;
 			projectDirPath = "";
@@ -361,13 +401,15 @@
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
 				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
+				33E1BD972B02B00500E70B4A /* PaymentViewController.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
 				858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */,
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
-				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
-				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
+				33E1BD992B02B01D00E70B4A /* PaymentView.swift in Sources */,
 				8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */,
+				33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
+				33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */,
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
@@ -462,6 +504,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -522,6 +565,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -714,6 +758,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.18.2;
+			};
+		};
 		8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -725,6 +777,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		33D0094C2AFECF36004BB2AE /* StripePaymentsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentsUI;
+		};
 		8583334C2AE0AA9E005540D6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
