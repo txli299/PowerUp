@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		02AE3AF613E6654D0D8234D0 /* Pods_PowerUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856E39C20D66BD303EDD7E52 /* Pods_PowerUpTests.framework */; };
+		1118349A2B0C131600EB24C4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111834992B0C131600EB24C4 /* MapViewController.swift */; };
+		1118349C2B0C131D00EB24C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349B2B0C131D00EB24C4 /* ContentView.swift */; };
+		111834A12B0C137D00EB24C4 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349D2B0C137D00EB24C4 /* Machine.swift */; };
+		111834A22B0C137D00EB24C4 /* CafeWithDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */; };
+		111834A32B0C137D00EB24C4 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349F2B0C137D00EB24C4 /* Coordinate.swift */; };
+		111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111834A02B0C137D00EB24C4 /* Cafe.swift */; };
 		1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* LoginViewController.swift */; };
 		1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* LoginView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
@@ -38,13 +44,7 @@
 		858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C22ACE60A6002B64C1 /* WalletView.swift */; };
 		858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C62ACE60C6002B64C1 /* StartScreenController.swift */; };
 		858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F16C72ACE60C6002B64C1 /* StartScreen.swift */; };
-		B1E80CDC2B095A5D009CBD93 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */; };
-		B1E80CDF2B095B41009CBD93 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CDE2B095B41009CBD93 /* Coordinate.swift */; };
-		B1E80CE12B095B5A009CBD93 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE02B095B5A009CBD93 /* Machine.swift */; };
-		B1E80CE32B095B69009CBD93 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE22B095B69009CBD93 /* Cafe.swift */; };
-		B1E80CE52B0976D6009CBD93 /* CafeWithDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */; };
 		FFF38C35A51F0D6C31E2C3BF /* Pods_PowerUp_PowerUpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94F392DEF1A1D274A790123 /* Pods_PowerUp_PowerUpUITests.framework */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111834992B0C131600EB24C4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1118349B2B0C131D00EB24C4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1118349D2B0C137D00EB24C4 /* Machine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeWithDistance.swift; sourceTree = "<group>"; };
+		1118349F2B0C137D00EB24C4 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		111834A02B0C137D00EB24C4 /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		1129A8892ACB5E990054E020 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -102,11 +108,6 @@
 		858F16C22ACE60A6002B64C1 /* WalletView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		858F16C62ACE60C6002B64C1 /* StartScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		858F16C72ACE60C6002B64C1 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
-		B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B1E80CDE2B095B41009CBD93 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		B1E80CE02B095B5A009CBD93 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
-		B1E80CE22B095B69009CBD93 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
-		B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeWithDistance.swift; sourceTree = "<group>"; };
 		997B66A43E020F39A767E048 /* Pods-PowerUp-PowerUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUp-PowerUpUITests.release.xcconfig"; path = "Target Support Files/Pods-PowerUp-PowerUpUITests/Pods-PowerUp-PowerUpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C94F392DEF1A1D274A790123 /* Pods_PowerUp_PowerUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUp_PowerUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD92E050B85858DB48E1D08F /* Pods-PowerUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUpTests.debug.xcconfig"; path = "Target Support Files/Pods-PowerUpTests/Pods-PowerUpTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111834A52B0C138F00EB24C4 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				111834A02B0C137D00EB24C4 /* Cafe.swift */,
+				1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */,
+				1118349F2B0C137D00EB24C4 /* Coordinate.swift */,
+				1118349D2B0C137D00EB24C4 /* Machine.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		1129A8882ACB5DF00054E020 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +223,9 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
-				B1E80CDB2B095A5D009CBD93 /* MapViewController.swift */,
+				111834A52B0C138F00EB24C4 /* DataModels */,
+				1118349B2B0C131D00EB24C4 /* ContentView.swift */,
+				111834992B0C131600EB24C4 /* MapViewController.swift */,
 				44B8ACCC2B02CA0B00D1BAA4 /* UserService */,
 				44B8ACCB2B02C0BF00D1BAA4 /* Keychain */,
 				858333522AE0AE07005540D6 /* GoogleService-Info.plist */,
@@ -251,7 +265,6 @@
 		858F16AC2ACA7338002B64C1 /* Store Screen */ = {
 			isa = PBXGroup;
 			children = (
-				B1E80CDD2B095AC7009CBD93 /* Data Models */,
 				858F16AD2ACA7357002B64C1 /* StoreViewController.swift */,
 				858F16AF2ACA73C5002B64C1 /* StoreScreen.swift */,
 			);
@@ -285,15 +298,6 @@
 			path = "Start Screen";
 			sourceTree = "<group>";
 		};
-		B1E80CDD2B095AC7009CBD93 /* Data Models */ = {
-			isa = PBXGroup;
-			children = (
-				B1E80CDE2B095B41009CBD93 /* Coordinate.swift */,
-				B1E80CE02B095B5A009CBD93 /* Machine.swift */,
-				B1E80CE22B095B69009CBD93 /* Cafe.swift */,
-				B1E80CE42B0976D6009CBD93 /* CafeWithDistance.swift */,
-			);
-			path = "Data Models";
 		9AED7EA542B464A85158CE98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,32 +556,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E80CE32B095B69009CBD93 /* Cafe.swift in Sources */,
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
-				B1E80CE52B0976D6009CBD93 /* CafeWithDistance.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
+				111834A12B0C137D00EB24C4 /* Machine.swift in Sources */,
 				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
+				111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
+				111834A32B0C137D00EB24C4 /* Coordinate.swift in Sources */,
 				858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */,
 				4452940A2AFDFB8900B1A3D5 /* ProfileViewController.swift in Sources */,
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
+				1118349A2B0C131600EB24C4 /* MapViewController.swift in Sources */,
 				445294082AFDFB0300B1A3D5 /* ProfileView.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				4452940C2B00A27A00B1A3D5 /* KeychainService.swift in Sources */,
 				44B8ACCE2B02CA2E00D1BAA4 /* UserService.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
+				1118349C2B0C131D00EB24C4 /* ContentView.swift in Sources */,
 				8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
+				111834A22B0C137D00EB24C4 /* CafeWithDistance.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
-				B1E80CDF2B095B41009CBD93 /* Coordinate.swift in Sources */,
-				B1E80CDC2B095A5D009CBD93 /* MapViewController.swift in Sources */,
-				B1E80CE12B095B5A009CBD93 /* Machine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
