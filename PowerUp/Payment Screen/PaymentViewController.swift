@@ -45,7 +45,7 @@ class PaymentViewController: UIViewController {
         //MARK: posting text to NotificationCenter...
         notificationCenter.post(
             name: Notification.Name("selectedAmount"),
-            object: "$ \(delegate.selectedAmount).00")
+            object: "\(delegate.selectedAmount).00")
     }
 }
             

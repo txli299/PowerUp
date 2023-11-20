@@ -10,6 +10,8 @@
 		1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* ProfileScreenController.swift */; };
 		1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
+		334B46292B0B739B009918ED /* UserCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B46282B0B739B009918ED /* UserCreditService.swift */; };
+		334B462B2B0B78F9009918ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B462A2B0B78F9009918ED /* User.swift */; };
 		33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D0094C2AFECF36004BB2AE /* StripePaymentsUI */; };
 		33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */; };
 		33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD932B02A54500E70B4A /* CheckOutView.swift */; };
@@ -60,6 +62,8 @@
 		1129A8892ACB5E990054E020 /* ProfileScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		334B46282B0B739B009918ED /* UserCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditService.swift; sourceTree = "<group>"; };
+		334B462A2B0B78F9009918ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		33E1BD932B02A54500E70B4A /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		33E1BD962B02B00500E70B4A /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				858F15502ABB77F1002B64C1 /* Info.plist */,
 				33E1BD952B02A54E00E70B4A /* Checkout Screen */,
 				33E1BD9A2B02BEC500E70B4A /* Payment Screen */,
+				334B46282B0B739B009918ED /* UserCreditService.swift */,
+				334B462A2B0B78F9009918ED /* User.swift */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
+				334B46292B0B739B009918ED /* UserCreditService.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
@@ -413,6 +420,7 @@
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
+				334B462B2B0B78F9009918ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
