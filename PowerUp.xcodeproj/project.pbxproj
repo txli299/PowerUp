@@ -14,6 +14,8 @@
 		111834A22B0C137D00EB24C4 /* CafeWithDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */; };
 		111834A32B0C137D00EB24C4 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118349F2B0C137D00EB24C4 /* Coordinate.swift */; };
 		111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111834A02B0C137D00EB24C4 /* Cafe.swift */; };
+		111834A72B0ED55A00EB24C4 /* OrderDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111834A62B0ED55A00EB24C4 /* OrderDto.swift */; };
+		111834A92B0EF66F00EB24C4 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111834A82B0EF66F00EB24C4 /* TimeTableViewCell.swift */; };
 		1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* LoginViewController.swift */; };
 		1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* LoginView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
@@ -71,6 +73,8 @@
 		1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeWithDistance.swift; sourceTree = "<group>"; };
 		1118349F2B0C137D00EB24C4 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		111834A02B0C137D00EB24C4 /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		111834A62B0ED55A00EB24C4 /* OrderDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDto.swift; sourceTree = "<group>"; };
+		111834A82B0EF66F00EB24C4 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		1129A8892ACB5E990054E020 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				1118349E2B0C137D00EB24C4 /* CafeWithDistance.swift */,
 				1118349F2B0C137D00EB24C4 /* Coordinate.swift */,
 				1118349D2B0C137D00EB24C4 /* Machine.swift */,
+				111834A62B0ED55A00EB24C4 /* OrderDto.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				858F16B22ACB978C002B64C1 /* TimeScreen.swift */,
 				858F16B42ACB97A1002B64C1 /* TimeViewController.swift */,
+				111834A82B0EF66F00EB24C4 /* TimeTableViewCell.swift */,
 			);
 			path = "Time Screen";
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111834A72B0ED55A00EB24C4 /* OrderDto.swift in Sources */,
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
@@ -566,6 +573,7 @@
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
+				111834A92B0EF66F00EB24C4 /* TimeTableViewCell.swift in Sources */,
 				111834A32B0C137D00EB24C4 /* Coordinate.swift in Sources */,
 				858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */,
 				4452940A2AFDFB8900B1A3D5 /* ProfileViewController.swift in Sources */,
