@@ -92,9 +92,49 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: submit type button tapped action...
     @objc func onButtonTypeSubmitTapped(){
-        showActivateView()
-        present(ActivateMachineNavController, animated: true)
+        let url = APIConfigs.baseAPI + "user/currentOrders/\(self.uid!)"
+        AF.request(url, method: .get, encoding: JSONEncoding.default)
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success:
+                        if let data = response.data {
+                            do {
+                                let orders = try JSONDecoder().decode([Order].self, from: data)
+                                
+                                // Check if the array has any orders
+                                if orders.isEmpty {
+                                    self.showActivateView()
+                                    self.present(self.ActivateMachineNavController, animated: true)
+                                } else {
+                                    self.showAlert(message: "You already have an order!")
+                                }
+                            } catch {
+                                print("Error decoding JSON: \(error)")
+                                // Handle decoding error, show an alert, etc.
+                            }
+                        }
+                    case .failure(let error):
+                        print("Error: \(error)")
+                        // Handle error, show an alert, etc.
+                    }
+                }
+        
         print("Type Button: I was clicked!")
     }
     
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Order Alert", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // Replace "yourViewController" with the actual view controller where you want to show the alert
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+struct Order: Codable {
+    let orderId: String
+    let machineName: String
+    let moneyForNow: Double
+    let timeForNow: Double
 }
