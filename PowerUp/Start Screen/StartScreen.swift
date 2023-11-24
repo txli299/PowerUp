@@ -65,13 +65,12 @@ class StartScreen: UIView {
         // credit label
         creditLabel = UILabel()
         creditLabel.text = "Credit Available:"
-        creditLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        creditLabel.font = UIFont.boldSystemFont(ofSize: 26)
         creditLabel.textColor = UIColor.white
         creditLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // credit figure label
         creditFigureLabel = UILabel()
-        creditFigureLabel.text = "$100.00"
         creditFigureLabel.font = UIFont.boldSystemFont(ofSize: 22)
         creditFigureLabel.textColor = UIColor.white
         creditFigureLabel.translatesAutoresizingMaskIntoConstraints = false

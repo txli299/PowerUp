@@ -22,6 +22,9 @@
 		4452940C2B00A27A00B1A3D5 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452940B2B00A27A00B1A3D5 /* KeychainService.swift */; };
 		44B8ACCE2B02CA2E00D1BAA4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8ACCD2B02CA2D00D1BAA4 /* UserService.swift */; };
 		7454DD130D9425939073494A /* Pods_PowerUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2C196D951641A7DAA32038 /* Pods_PowerUp.framework */; };
+		850037642B102BC6009C5E8B /* ActivateMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850037632B102BC6009C5E8B /* ActivateMachineViewController.swift */; };
+		850037662B102BEF009C5E8B /* ActivateMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850037652B102BEF009C5E8B /* ActivateMachineView.swift */; };
+		850037682B102D09009C5E8B /* APIConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850037672B102D09009C5E8B /* APIConfigs.swift */; };
 		8583334D2AE0AA9E005540D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8583334C2AE0AA9E005540D6 /* FirebaseAuth */; };
 		8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8583334E2AE0AB4A005540D6 /* RegisterViewController.swift */; };
 		858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858333502AE0AB5F005540D6 /* RegisterView.swift */; };
@@ -82,6 +85,9 @@
 		4452940B2B00A27A00B1A3D5 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		44B8ACCD2B02CA2D00D1BAA4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7551CF5ED700DE1005997F51 /* Pods-PowerUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUp.release.xcconfig"; path = "Target Support Files/Pods-PowerUp/Pods-PowerUp.release.xcconfig"; sourceTree = "<group>"; };
+		850037632B102BC6009C5E8B /* ActivateMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateMachineViewController.swift; sourceTree = "<group>"; };
+		850037652B102BEF009C5E8B /* ActivateMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateMachineView.swift; sourceTree = "<group>"; };
+		850037672B102D09009C5E8B /* APIConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigs.swift; sourceTree = "<group>"; };
 		856E39C20D66BD303EDD7E52 /* Pods_PowerUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8583334E2AE0AB4A005540D6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		858333502AE0AB5F005540D6 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -196,6 +202,15 @@
 			path = UserService;
 			sourceTree = "<group>";
 		};
+		850037622B102BAE009C5E8B /* ActivateScreen */ = {
+			isa = PBXGroup;
+			children = (
+				850037632B102BC6009C5E8B /* ActivateMachineViewController.swift */,
+				850037652B102BEF009C5E8B /* ActivateMachineView.swift */,
+			);
+			path = ActivateScreen;
+			sourceTree = "<group>";
+		};
 		858F15362ABB77F0002B64C1 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +238,7 @@
 		858F15412ABB77F0002B64C1 /* PowerUp */ = {
 			isa = PBXGroup;
 			children = (
+				850037622B102BAE009C5E8B /* ActivateScreen */,
 				111834A52B0C138F00EB24C4 /* DataModels */,
 				1118349B2B0C131D00EB24C4 /* ContentView.swift */,
 				111834992B0C131600EB24C4 /* MapViewController.swift */,
@@ -241,6 +257,7 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
+				850037672B102D09009C5E8B /* APIConfigs.swift */,
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -563,6 +580,7 @@
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
 				111834A12B0C137D00EB24C4 /* Machine.swift in Sources */,
 				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
+				850037642B102BC6009C5E8B /* ActivateMachineViewController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
@@ -572,6 +590,7 @@
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
 				1118349A2B0C131600EB24C4 /* MapViewController.swift in Sources */,
 				445294082AFDFB0300B1A3D5 /* ProfileView.swift in Sources */,
+				850037662B102BEF009C5E8B /* ActivateMachineView.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				4452940C2B00A27A00B1A3D5 /* KeychainService.swift in Sources */,
 				44B8ACCE2B02CA2E00D1BAA4 /* UserService.swift in Sources */,
@@ -582,6 +601,7 @@
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				111834A22B0C137D00EB24C4 /* CafeWithDistance.swift in Sources */,
+				850037682B102D09009C5E8B /* APIConfigs.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

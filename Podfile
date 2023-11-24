@@ -5,6 +5,7 @@ target 'PowerUp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 pod 'SwiftKeychainWrapper'
+pod 'Alamofire'
 
   # Pods for PowerUp
 	
