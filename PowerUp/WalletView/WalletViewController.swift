@@ -62,7 +62,7 @@ class WalletViewController: UIViewController {
     
     func addBalance(userDetails: [String : Any]){
         
-        UserCreditService.updateUserDetails(uid: uid!, userDetails: userDetails){ success, error in
+        UserService.updateUserDetails(uid: uid!, userDetails: userDetails){ success, error in
             DispatchQueue.main.async {
                 if success {
                     print("User details successfully updated in server")
@@ -77,7 +77,7 @@ class WalletViewController: UIViewController {
     
     func loadCurrentBalance(){
         
-        UserCreditService.getUserDetails(uid: uid! ){userData, error in
+        UserService.getUserDetails(uid: uid! ){userData, error in
             
             if let error = error{
                 print(error)
