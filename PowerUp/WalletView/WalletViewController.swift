@@ -13,6 +13,8 @@ class WalletViewController: UIViewController {
     
     private let walletView = WalletView()
     
+    let uid = KeychainService.loadToken()
+    
     let notificationCenter = NotificationCenter.default
     
     let checkoutController = CheckOutViewController()
@@ -27,8 +29,7 @@ class WalletViewController: UIViewController {
         
         loadCurrentBalance()
         
-        walletView.addFundsButton.addTarget(self, action: #selector(onFindButtonTapped), for: .touchUpInside)
-        walletView.stripePayButton.addTarget(self, action: #selector(pay), for: .touchUpInside)
+        walletView.addFundsButton.addTarget(self, action: #selector(onCheckOutButtonTapped), for: .touchUpInside)
         
         observeAmountSelected()
     }
@@ -49,10 +50,8 @@ class WalletViewController: UIViewController {
             if let doubleValue = Double(uwAmount) {
                 print("Converted value to Double: \(doubleValue)")
                 
-                //harcoded but will be updated
-                let uid = "6552a2075c0eaa381c2c8c92"
                 let userDetailsDictionary: [String: Any] = ["credit": doubleValue]
-                addBalance(uid: uid, userDetails: userDetailsDictionary)
+                addBalance(userDetails: userDetailsDictionary)
             } else {
                 print("Failed to convert to Double")
             }
@@ -61,10 +60,9 @@ class WalletViewController: UIViewController {
                
     }
     
-    //use keychain to extract uid
-    func addBalance(uid: String, userDetails: [String : Any]){
+    func addBalance(userDetails: [String : Any]){
         
-        UserCreditService.updateUserDetails(uid: uid, userDetails: userDetails){ success, error in
+        UserCreditService.updateUserDetails(uid: uid!, userDetails: userDetails){ success, error in
             DispatchQueue.main.async {
                 if success {
                     print("User details successfully updated in server")
@@ -79,15 +77,12 @@ class WalletViewController: UIViewController {
     
     func loadCurrentBalance(){
         
-        //hardcoded userid: change to current user id
-        let uid = "6552a2075c0eaa381c2c8c92"
-        
-        UserCreditService.getUserDetails(uid: uid ){userData, error in
+        UserCreditService.getUserDetails(uid: uid! ){userData, error in
             
             if let error = error{
                 print(error)
             } else if let userData = userData{
-                let balance = userData.credit
+                let balance = "\(userData.credit)0"
                 print("This is user credit \(userData.credit)")
                 
                 //refresh UI
@@ -98,20 +93,6 @@ class WalletViewController: UIViewController {
         }
     }
     
-    // shows stripe card component
-    @objc func addFundsTapped() {
-        walletView.stripeStackView.isHidden = false
-    }
-    
-    func displayAlert(title: String){
-        
-    }
-    
-    @objc func pay() {
-        print("Stripe Button: I was clicked!")
-//        print(walletView.stripeCardTextField.paymentMethodParams.card)
-    }
-
     func setupCheckoutBottomSheet(){
         checkoutNavController = UINavigationController(rootViewController: checkoutController)
         checkoutNavController.modalPresentationStyle = .pageSheet
@@ -122,7 +103,7 @@ class WalletViewController: UIViewController {
         }
     }
     
-    @objc func onFindButtonTapped(){
+    @objc func onCheckOutButtonTapped(){
         setupCheckoutBottomSheet()
         present(checkoutNavController, animated: true)
        }

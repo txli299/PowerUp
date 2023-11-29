@@ -32,7 +32,7 @@ class CheckOutView: UIView {
     
     func setupAmountLabel(){
         amountLabel = UILabel()
-        amountLabel.text = "Amount:"
+        amountLabel.text = "Amount in USD:"
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(amountLabel)
     }
