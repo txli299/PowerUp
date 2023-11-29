@@ -84,15 +84,13 @@
 		1129A8892ACB5E990054E020 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1129A88B2ACB5ED30054E020 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-<<<<<<< HEAD
+		2E2C196D951641A7DAA32038 /* Pods_PowerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		334B46282B0B739B009918ED /* UserCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditService.swift; sourceTree = "<group>"; };
 		334B462A2B0B78F9009918ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		33E1BD932B02A54500E70B4A /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		33E1BD962B02B00500E70B4A /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		33E1BD982B02B01D00E70B4A /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-=======
-		2E2C196D951641A7DAA32038 /* Pods_PowerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF5735E8EB5E7E4240F0C71 /* Pods-PowerUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUp.debug.xcconfig"; path = "Target Support Files/Pods-PowerUp/Pods-PowerUp.debug.xcconfig"; sourceTree = "<group>"; };
 		4199B8D07DD0FF42E3618594 /* Pods-PowerUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUpTests.release.xcconfig"; path = "Target Support Files/Pods-PowerUpTests/Pods-PowerUpTests.release.xcconfig"; sourceTree = "<group>"; };
 		445294072AFDFB0300B1A3D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		850037652B102BEF009C5E8B /* ActivateMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateMachineView.swift; sourceTree = "<group>"; };
 		850037672B102D09009C5E8B /* APIConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigs.swift; sourceTree = "<group>"; };
 		856E39C20D66BD303EDD7E52 /* Pods_PowerUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
->>>>>>> main
 		8583334E2AE0AB4A005540D6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		858333502AE0AB5F005540D6 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		858333522AE0AE07005540D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -190,7 +187,19 @@
 			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
+		16FD2581EABE2ABB23ADCDE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BF5735E8EB5E7E4240F0C71 /* Pods-PowerUp.debug.xcconfig */,
+				7551CF5ED700DE1005997F51 /* Pods-PowerUp.release.xcconfig */,
+				FD1A0FB970BA81F6F3BACD8C /* Pods-PowerUp-PowerUpUITests.debug.xcconfig */,
+				997B66A43E020F39A767E048 /* Pods-PowerUp-PowerUpUITests.release.xcconfig */,
+				CD92E050B85858DB48E1D08F /* Pods-PowerUpTests.debug.xcconfig */,
+				4199B8D07DD0FF42E3618594 /* Pods-PowerUpTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		33E1BD952B02A54E00E70B4A /* Checkout Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,25 +216,6 @@
 				33E1BD982B02B01D00E70B4A /* PaymentView.swift */,
 			);
 			path = "Payment Screen";
-			sourceTree = "<group>";
-		};
-		33E211E42AFECA4300DECF22 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-=======
-		16FD2581EABE2ABB23ADCDE9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3BF5735E8EB5E7E4240F0C71 /* Pods-PowerUp.debug.xcconfig */,
-				7551CF5ED700DE1005997F51 /* Pods-PowerUp.release.xcconfig */,
-				FD1A0FB970BA81F6F3BACD8C /* Pods-PowerUp-PowerUpUITests.debug.xcconfig */,
-				997B66A43E020F39A767E048 /* Pods-PowerUp-PowerUpUITests.release.xcconfig */,
-				CD92E050B85858DB48E1D08F /* Pods-PowerUpTests.debug.xcconfig */,
-				4199B8D07DD0FF42E3618594 /* Pods-PowerUpTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		44B8ACCB2B02C0BF00D1BAA4 /* Keychain */ = {
@@ -251,7 +241,6 @@
 				850037652B102BEF009C5E8B /* ActivateMachineView.swift */,
 			);
 			path = ActivateScreen;
->>>>>>> main
 			sourceTree = "<group>";
 		};
 		858F15362ABB77F0002B64C1 = {
@@ -263,12 +252,8 @@
 				858F15582ABB77F1002B64C1 /* PowerUpTests */,
 				858F15622ABB77F1002B64C1 /* PowerUpUITests */,
 				858F15402ABB77F0002B64C1 /* Products */,
-<<<<<<< HEAD
-				33E211E42AFECA4300DECF22 /* Frameworks */,
-=======
 				16FD2581EABE2ABB23ADCDE9 /* Pods */,
 				9AED7EA542B464A85158CE98 /* Frameworks */,
->>>>>>> main
 			);
 			sourceTree = "<group>";
 		};
@@ -304,14 +289,11 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
-<<<<<<< HEAD
 				33E1BD952B02A54E00E70B4A /* Checkout Screen */,
 				33E1BD9A2B02BEC500E70B4A /* Payment Screen */,
 				334B46282B0B739B009918ED /* UserCreditService.swift */,
 				334B462A2B0B78F9009918ED /* User.swift */,
-=======
 				850037672B102D09009C5E8B /* APIConfigs.swift */,
->>>>>>> main
 			);
 			path = PowerUp;
 			sourceTree = "<group>";
@@ -637,23 +619,18 @@
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
 				111834A12B0C137D00EB24C4 /* Machine.swift in Sources */,
 				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
-<<<<<<< HEAD
-				1129A88A2ACB5E990054E020 /* ProfileScreenController.swift in Sources */,
+				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				33E1BD972B02B00500E70B4A /* PaymentViewController.swift in Sources */,
-				1129A88C2ACB5ED30054E020 /* ProfileScreenView.swift in Sources */,
-=======
+				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
 				850037642B102BC6009C5E8B /* ActivateMachineViewController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
 				111834A32B0C137D00EB24C4 /* Coordinate.swift in Sources */,
->>>>>>> main
 				858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */,
 				4452940A2AFDFB8900B1A3D5 /* ProfileViewController.swift in Sources */,
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
-<<<<<<< HEAD
 				33E1BD992B02B01D00E70B4A /* PaymentView.swift in Sources */,
-=======
 				1118349A2B0C131600EB24C4 /* MapViewController.swift in Sources */,
 				445294082AFDFB0300B1A3D5 /* ProfileView.swift in Sources */,
 				850037662B102BEF009C5E8B /* ActivateMachineView.swift in Sources */,
@@ -662,7 +639,6 @@
 				44B8ACCE2B02CA2E00D1BAA4 /* UserService.swift in Sources */,
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
 				1118349C2B0C131D00EB24C4 /* ContentView.swift in Sources */,
->>>>>>> main
 				8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */,
 				33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
@@ -853,6 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VYD5Y58Z2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -882,6 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VYD5Y58Z2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
