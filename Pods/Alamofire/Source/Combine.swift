@@ -91,37 +91,23 @@ public struct DataResponsePublisher<Value>: Publisher {
         where Downstream.Input == Output {
         typealias Failure = Downstream.Failure
 
-<<<<<<< HEAD
         @Protected
         private var downstream: Downstream?
-=======
-        private let downstream: Protected<Downstream?>
->>>>>>> aefbec1 (config)
         private let request: DataRequest
         private let responseHandler: Handler
 
         init(request: DataRequest, responseHandler: @escaping Handler, downstream: Downstream) {
             self.request = request
             self.responseHandler = responseHandler
-<<<<<<< HEAD
             self.downstream = downstream
-=======
-            self.downstream = Protected(downstream)
->>>>>>> aefbec1 (config)
         }
 
         func request(_ demand: Subscribers.Demand) {
             assert(demand > 0)
 
-<<<<<<< HEAD
             guard let downstream = downstream else { return }
 
             self.downstream = nil
-=======
-            guard let downstream = downstream.read({ $0 }) else { return }
-
-            self.downstream.write(nil)
->>>>>>> aefbec1 (config)
             responseHandler { response in
                 _ = downstream.receive(response)
                 downstream.receive(completion: .finished)
@@ -130,11 +116,7 @@ public struct DataResponsePublisher<Value>: Publisher {
 
         func cancel() {
             request.cancel()
-<<<<<<< HEAD
             downstream = nil
-=======
-            downstream.write(nil)
->>>>>>> aefbec1 (config)
         }
     }
 }
@@ -330,37 +312,23 @@ public struct DataStreamPublisher<Value>: Publisher {
         where Downstream.Input == Output {
         typealias Failure = Downstream.Failure
 
-<<<<<<< HEAD
         @Protected
         private var downstream: Downstream?
-=======
-        private let downstream: Protected<Downstream?>
->>>>>>> aefbec1 (config)
         private let request: DataStreamRequest
         private let streamHandler: Handler
 
         init(request: DataStreamRequest, streamHandler: @escaping Handler, downstream: Downstream) {
             self.request = request
             self.streamHandler = streamHandler
-<<<<<<< HEAD
             self.downstream = downstream
-=======
-            self.downstream = Protected(downstream)
->>>>>>> aefbec1 (config)
         }
 
         func request(_ demand: Subscribers.Demand) {
             assert(demand > 0)
 
-<<<<<<< HEAD
             guard let downstream = downstream else { return }
 
             self.downstream = nil
-=======
-            guard let downstream = downstream.read({ $0 }) else { return }
-
-            self.downstream.write(nil)
->>>>>>> aefbec1 (config)
             streamHandler { stream in
                 _ = downstream.receive(stream)
                 if case .complete = stream.event {
@@ -371,11 +339,7 @@ public struct DataStreamPublisher<Value>: Publisher {
 
         func cancel() {
             request.cancel()
-<<<<<<< HEAD
             downstream = nil
-=======
-            downstream.write(nil)
->>>>>>> aefbec1 (config)
         }
     }
 }
@@ -498,37 +462,23 @@ public struct DownloadResponsePublisher<Value>: Publisher {
         where Downstream.Input == Output {
         typealias Failure = Downstream.Failure
 
-<<<<<<< HEAD
         @Protected
         private var downstream: Downstream?
-=======
-        private let downstream: Protected<Downstream?>
->>>>>>> aefbec1 (config)
         private let request: DownloadRequest
         private let responseHandler: Handler
 
         init(request: DownloadRequest, responseHandler: @escaping Handler, downstream: Downstream) {
             self.request = request
             self.responseHandler = responseHandler
-<<<<<<< HEAD
             self.downstream = downstream
-=======
-            self.downstream = Protected(downstream)
->>>>>>> aefbec1 (config)
         }
 
         func request(_ demand: Subscribers.Demand) {
             assert(demand > 0)
 
-<<<<<<< HEAD
             guard let downstream = downstream else { return }
 
             self.downstream = nil
-=======
-            guard let downstream = downstream.read({ $0 }) else { return }
-
-            self.downstream.write(nil)
->>>>>>> aefbec1 (config)
             responseHandler { response in
                 _ = downstream.receive(response)
                 downstream.receive(completion: .finished)
@@ -537,11 +487,7 @@ public struct DownloadResponsePublisher<Value>: Publisher {
 
         func cancel() {
             request.cancel()
-<<<<<<< HEAD
             downstream = nil
-=======
-            downstream.write(nil)
->>>>>>> aefbec1 (config)
         }
     }
 }

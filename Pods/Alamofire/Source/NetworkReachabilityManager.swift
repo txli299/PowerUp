@@ -113,12 +113,8 @@ open class NetworkReachabilityManager {
     private let reachability: SCNetworkReachability
 
     /// Protected storage for mutable state.
-<<<<<<< HEAD
     @Protected
     private var mutableState = MutableState()
-=======
-    private let mutableState = Protected(MutableState())
->>>>>>> aefbec1 (config)
 
     // MARK: - Initialization
 
@@ -172,11 +168,7 @@ open class NetworkReachabilityManager {
                              onUpdatePerforming listener: @escaping Listener) -> Bool {
         stopListening()
 
-<<<<<<< HEAD
         $mutableState.write { state in
-=======
-        mutableState.write { state in
->>>>>>> aefbec1 (config)
             state.listenerQueue = queue
             state.listener = listener
         }
@@ -228,11 +220,7 @@ open class NetworkReachabilityManager {
     open func stopListening() {
         SCNetworkReachabilitySetCallback(reachability, nil, nil)
         SCNetworkReachabilitySetDispatchQueue(reachability, nil)
-<<<<<<< HEAD
         $mutableState.write { state in
-=======
-        mutableState.write { state in
->>>>>>> aefbec1 (config)
             state.listener = nil
             state.listenerQueue = nil
             state.previousStatus = nil
@@ -249,11 +237,7 @@ open class NetworkReachabilityManager {
     func notifyListener(_ flags: SCNetworkReachabilityFlags) {
         let newStatus = NetworkReachabilityStatus(flags)
 
-<<<<<<< HEAD
         $mutableState.write { state in
-=======
-        mutableState.write { state in
->>>>>>> aefbec1 (config)
             guard state.previousStatus != newStatus else { return }
 
             state.previousStatus = newStatus
@@ -283,17 +267,12 @@ extension SCNetworkReachabilityFlags {
     var canConnectWithoutUserInteraction: Bool { canConnectAutomatically && !contains(.interventionRequired) }
     var isActuallyReachable: Bool { isReachable && (!isConnectionRequired || canConnectWithoutUserInteraction) }
     var isCellular: Bool {
-<<<<<<< HEAD
         #if swift(>=5.9)
         #if os(iOS) || os(tvOS) || os(visionOS)
-=======
-        #if os(iOS) || os(tvOS) || (swift(>=5.9) && os(visionOS))
->>>>>>> aefbec1 (config)
         return contains(.isWWAN)
         #else
         return false
         #endif
-<<<<<<< HEAD
         #else
         #if os(iOS) || os(tvOS)
         return contains(.isWWAN)
@@ -301,8 +280,6 @@ extension SCNetworkReachabilityFlags {
         return false
         #endif
         #endif
-=======
->>>>>>> aefbec1 (config)
     }
 
     /// Human readable `String` for all states, to help with debugging.

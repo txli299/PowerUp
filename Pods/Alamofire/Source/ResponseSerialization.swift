@@ -1153,11 +1153,7 @@ extension DataStreamRequest {
             }
         }
 
-<<<<<<< HEAD
         $streamMutableState.write { $0.streams.append(parser) }
-=======
-        streamMutableState.write { $0.streams.append(parser) }
->>>>>>> aefbec1 (config)
         appendStreamCompletion(on: queue, stream: stream)
 
         return self
@@ -1199,11 +1195,7 @@ extension DataStreamRequest {
             }
         }
 
-<<<<<<< HEAD
         $streamMutableState.write { $0.streams.append(parser) }
-=======
-        streamMutableState.write { $0.streams.append(parser) }
->>>>>>> aefbec1 (config)
         appendStreamCompletion(on: queue, stream: stream)
 
         return self
@@ -1238,22 +1230,14 @@ extension DataStreamRequest {
             }
         }
 
-<<<<<<< HEAD
         $streamMutableState.write { $0.streams.append(parser) }
-=======
-        streamMutableState.write { $0.streams.append(parser) }
->>>>>>> aefbec1 (config)
         appendStreamCompletion(on: queue, stream: stream)
 
         return self
     }
 
     private func updateAndCompleteIfPossible() {
-<<<<<<< HEAD
         $streamMutableState.write { state in
-=======
-        streamMutableState.write { state in
->>>>>>> aefbec1 (config)
             state.numberOfExecutingStreams -= 1
 
             guard state.numberOfExecutingStreams == 0, !state.enqueuedCompletionEvents.isEmpty else { return }
