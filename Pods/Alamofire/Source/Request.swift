@@ -125,11 +125,18 @@ public class Request {
     }
 
     /// Protected `MutableState` value that provides thread-safe access to state values.
+<<<<<<< HEAD
     @Protected
     fileprivate var mutableState = MutableState()
 
     /// `State` of the `Request`.
     public var state: State { $mutableState.state }
+=======
+    fileprivate let mutableState = Protected(MutableState())
+
+    /// `State` of the `Request`.
+    public var state: State { mutableState.state }
+>>>>>>> aefbec1 (config)
     /// Returns whether `state` is `.initialized`.
     public var isInitialized: Bool { state == .initialized }
     /// Returns whether `state is `.resumed`.
@@ -152,50 +159,83 @@ public class Request {
     public let downloadProgress = Progress(totalUnitCount: 0)
     /// `ProgressHandler` called when `uploadProgress` is updated, on the provided `DispatchQueue`.
     private var uploadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {
+<<<<<<< HEAD
         get { $mutableState.uploadProgressHandler }
         set { $mutableState.uploadProgressHandler = newValue }
+=======
+        get { mutableState.uploadProgressHandler }
+        set { mutableState.uploadProgressHandler = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     /// `ProgressHandler` called when `downloadProgress` is updated, on the provided `DispatchQueue`.
     fileprivate var downloadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {
+<<<<<<< HEAD
         get { $mutableState.downloadProgressHandler }
         set { $mutableState.downloadProgressHandler = newValue }
+=======
+        get { mutableState.downloadProgressHandler }
+        set { mutableState.downloadProgressHandler = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     // MARK: Redirect Handling
 
     /// `RedirectHandler` set on the instance.
     public private(set) var redirectHandler: RedirectHandler? {
+<<<<<<< HEAD
         get { $mutableState.redirectHandler }
         set { $mutableState.redirectHandler = newValue }
+=======
+        get { mutableState.redirectHandler }
+        set { mutableState.redirectHandler = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     // MARK: Cached Response Handling
 
     /// `CachedResponseHandler` set on the instance.
     public private(set) var cachedResponseHandler: CachedResponseHandler? {
+<<<<<<< HEAD
         get { $mutableState.cachedResponseHandler }
         set { $mutableState.cachedResponseHandler = newValue }
+=======
+        get { mutableState.cachedResponseHandler }
+        set { mutableState.cachedResponseHandler = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     // MARK: URLCredential
 
     /// `URLCredential` used for authentication challenges. Created by calling one of the `authenticate` methods.
     public private(set) var credential: URLCredential? {
+<<<<<<< HEAD
         get { $mutableState.credential }
         set { $mutableState.credential = newValue }
+=======
+        get { mutableState.credential }
+        set { mutableState.credential = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     // MARK: Validators
 
     /// `Validator` callback closures that store the validation calls enqueued.
+<<<<<<< HEAD
     @Protected
     fileprivate var validators: [() -> Void] = []
+=======
+    fileprivate let validators = Protected<[() -> Void]>([])
+>>>>>>> aefbec1 (config)
 
     // MARK: URLRequests
 
     /// All `URLRequests` created on behalf of the `Request`, including original and adapted requests.
+<<<<<<< HEAD
     public var requests: [URLRequest] { $mutableState.requests }
+=======
+    public var requests: [URLRequest] { mutableState.requests }
+>>>>>>> aefbec1 (config)
     /// First `URLRequest` created on behalf of the `Request`. May not be the first one actually executed.
     public var firstRequest: URLRequest? { requests.first }
     /// Last `URLRequest` created on behalf of the `Request`.
@@ -205,7 +245,11 @@ public class Request {
 
     /// `URLRequest`s from all of the `URLSessionTask`s executed on behalf of the `Request`. May be different from
     /// `requests` due to `URLSession` manipulation.
+<<<<<<< HEAD
     public var performedRequests: [URLRequest] { $mutableState.read { $0.tasks.compactMap(\.currentRequest) } }
+=======
+    public var performedRequests: [URLRequest] { mutableState.read { $0.tasks.compactMap(\.currentRequest) } }
+>>>>>>> aefbec1 (config)
 
     // MARK: HTTPURLResponse
 
@@ -216,7 +260,11 @@ public class Request {
     // MARK: Tasks
 
     /// All `URLSessionTask`s created on behalf of the `Request`.
+<<<<<<< HEAD
     public var tasks: [URLSessionTask] { $mutableState.tasks }
+=======
+    public var tasks: [URLSessionTask] { mutableState.tasks }
+>>>>>>> aefbec1 (config)
     /// First `URLSessionTask` created on behalf of the `Request`.
     public var firstTask: URLSessionTask? { tasks.first }
     /// Last `URLSessionTask` created on behalf of the `Request`.
@@ -227,7 +275,11 @@ public class Request {
     // MARK: Metrics
 
     /// All `URLSessionTaskMetrics` gathered on behalf of the `Request`. Should correspond to the `tasks` created.
+<<<<<<< HEAD
     public var allMetrics: [URLSessionTaskMetrics] { $mutableState.metrics }
+=======
+    public var allMetrics: [URLSessionTaskMetrics] { mutableState.metrics }
+>>>>>>> aefbec1 (config)
     /// First `URLSessionTaskMetrics` gathered on behalf of the `Request`.
     public var firstMetrics: URLSessionTaskMetrics? { allMetrics.first }
     /// Last `URLSessionTaskMetrics` gathered on behalf of the `Request`.
@@ -238,14 +290,23 @@ public class Request {
     // MARK: Retry Count
 
     /// Number of times the `Request` has been retried.
+<<<<<<< HEAD
     public var retryCount: Int { $mutableState.retryCount }
+=======
+    public var retryCount: Int { mutableState.retryCount }
+>>>>>>> aefbec1 (config)
 
     // MARK: Error
 
     /// `Error` returned from Alamofire internally, from the network request directly, or any validators executed.
     public fileprivate(set) var error: AFError? {
+<<<<<<< HEAD
         get { $mutableState.error }
         set { $mutableState.error = newValue }
+=======
+        get { mutableState.error }
+        set { mutableState.error = newValue }
+>>>>>>> aefbec1 (config)
     }
 
     /// Default initializer for the `Request` superclass.
@@ -283,7 +344,11 @@ public class Request {
     func didCreateInitialURLRequest(_ request: URLRequest) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { $0.requests.append(request) }
+=======
+        mutableState.write { $0.requests.append(request) }
+>>>>>>> aefbec1 (config)
 
         eventMonitor?.request(self, didCreateInitialURLRequest: request)
     }
@@ -313,7 +378,11 @@ public class Request {
     func didAdaptInitialRequest(_ initialRequest: URLRequest, to adaptedRequest: URLRequest) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { $0.requests.append(adaptedRequest) }
+=======
+        mutableState.write { $0.requests.append(adaptedRequest) }
+>>>>>>> aefbec1 (config)
 
         eventMonitor?.request(self, didAdaptInitialRequest: initialRequest, to: adaptedRequest)
     }
@@ -343,7 +412,11 @@ public class Request {
     func didCreateURLRequest(_ request: URLRequest) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.read { state in
+=======
+        mutableState.read { state in
+>>>>>>> aefbec1 (config)
             state.urlRequestHandler?.queue.async { state.urlRequestHandler?.handler(request) }
         }
 
@@ -354,7 +427,11 @@ public class Request {
 
     /// Asynchronously calls any stored `cURLHandler` and then removes it from `mutableState`.
     private func callCURLHandlerIfNecessary() {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             guard let cURLHandler = mutableState.cURLHandler else { return }
 
             cURLHandler.queue.async { cURLHandler.handler(self.cURLDescription()) }
@@ -369,7 +446,11 @@ public class Request {
     func didCreateTask(_ task: URLSessionTask) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { state in
+=======
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             state.tasks.append(task)
 
             guard let urlSessionTaskHandler = state.urlSessionTaskHandler else { return }
@@ -416,7 +497,11 @@ public class Request {
     func didCancel() {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             mutableState.error = mutableState.error ?? AFError.explicitlyCancelled
         }
 
@@ -438,7 +523,11 @@ public class Request {
     func didGatherMetrics(_ metrics: URLSessionTaskMetrics) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { $0.metrics.append(metrics) }
+=======
+        mutableState.write { $0.metrics.append(metrics) }
+>>>>>>> aefbec1 (config)
 
         eventMonitor?.request(self, didGatherMetrics: metrics)
     }
@@ -470,6 +559,10 @@ public class Request {
 
         self.error = self.error ?? error
 
+<<<<<<< HEAD
+=======
+        let validators = validators.read { $0 }
+>>>>>>> aefbec1 (config)
         validators.forEach { $0() }
 
         eventMonitor?.request(self, didCompleteTask: task, with: error)
@@ -481,7 +574,11 @@ public class Request {
     func prepareForRetry() {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         $mutableState.write { $0.retryCount += 1 }
+=======
+        mutableState.write { $0.retryCount += 1 }
+>>>>>>> aefbec1 (config)
 
         reset()
 
@@ -515,9 +612,15 @@ public class Request {
     func finish(error: AFError? = nil) {
         dispatchPrecondition(condition: .onQueue(underlyingQueue))
 
+<<<<<<< HEAD
         guard !$mutableState.isFinishing else { return }
 
         $mutableState.isFinishing = true
+=======
+        guard !mutableState.isFinishing else { return }
+
+        mutableState.isFinishing = true
+>>>>>>> aefbec1 (config)
 
         if let error = error { self.error = error }
 
@@ -533,7 +636,11 @@ public class Request {
     ///
     /// - Parameter closure: The closure containing the response serialization call.
     func appendResponseSerializer(_ closure: @escaping () -> Void) {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             mutableState.responseSerializers.append(closure)
 
             if mutableState.state == .finished {
@@ -556,7 +663,11 @@ public class Request {
     func nextResponseSerializer() -> (() -> Void)? {
         var responseSerializer: (() -> Void)?
 
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             let responseSerializerIndex = mutableState.responseSerializerCompletions.count
 
             if responseSerializerIndex < mutableState.responseSerializers.count {
@@ -573,7 +684,11 @@ public class Request {
             // Execute all response serializer completions and clear them
             var completions: [() -> Void] = []
 
+<<<<<<< HEAD
             $mutableState.write { mutableState in
+=======
+            mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
                 completions = mutableState.responseSerializerCompletions
 
                 // Clear out all response serializers and response serializer completions in mutable state since the
@@ -607,7 +722,11 @@ public class Request {
     /// - Parameter completion: The completion handler provided with the response serializer, called when all serializers
     ///                         are complete.
     func responseSerializerDidComplete(completion: @escaping () -> Void) {
+<<<<<<< HEAD
         $mutableState.write { $0.responseSerializerCompletions.append(completion) }
+=======
+        mutableState.write { $0.responseSerializerCompletions.append(completion) }
+>>>>>>> aefbec1 (config)
         processNextResponseSerializer()
     }
 
@@ -620,7 +739,11 @@ public class Request {
         downloadProgress.totalUnitCount = 0
         downloadProgress.completedUnitCount = 0
 
+<<<<<<< HEAD
         $mutableState.write { state in
+=======
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             state.isFinishing = false
             state.responseSerializerCompletions = []
         }
@@ -642,7 +765,11 @@ public class Request {
     ///
     /// - Parameter perform: The closure to perform.
     func withState(perform: (State) -> Void) {
+<<<<<<< HEAD
         $mutableState.withState(perform: perform)
+=======
+        mutableState.withState(perform: perform)
+>>>>>>> aefbec1 (config)
     }
 
     // MARK: Task Creation
@@ -669,7 +796,11 @@ public class Request {
     /// - Returns: The instance.
     @discardableResult
     public func cancel() -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             guard mutableState.state.canTransitionTo(.cancelled) else { return }
 
             mutableState.state = .cancelled
@@ -695,7 +826,11 @@ public class Request {
     /// - Returns: The instance.
     @discardableResult
     public func suspend() -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             guard mutableState.state.canTransitionTo(.suspended) else { return }
 
             mutableState.state = .suspended
@@ -716,7 +851,11 @@ public class Request {
     /// - Returns: The instance.
     @discardableResult
     public func resume() -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             guard mutableState.state.canTransitionTo(.resumed) else { return }
 
             mutableState.state = .resumed
@@ -756,7 +895,11 @@ public class Request {
     /// - Returns:              The instance.
     @discardableResult
     public func authenticate(with credential: URLCredential) -> Self {
+<<<<<<< HEAD
         $mutableState.credential = credential
+=======
+        mutableState.credential = credential
+>>>>>>> aefbec1 (config)
 
         return self
     }
@@ -772,7 +915,11 @@ public class Request {
     /// - Returns:   The instance.
     @discardableResult
     public func downloadProgress(queue: DispatchQueue = .main, closure: @escaping ProgressHandler) -> Self {
+<<<<<<< HEAD
         $mutableState.downloadProgressHandler = (handler: closure, queue: queue)
+=======
+        mutableState.downloadProgressHandler = (handler: closure, queue: queue)
+>>>>>>> aefbec1 (config)
 
         return self
     }
@@ -788,7 +935,11 @@ public class Request {
     /// - Returns:   The instance.
     @discardableResult
     public func uploadProgress(queue: DispatchQueue = .main, closure: @escaping ProgressHandler) -> Self {
+<<<<<<< HEAD
         $mutableState.uploadProgressHandler = (handler: closure, queue: queue)
+=======
+        mutableState.uploadProgressHandler = (handler: closure, queue: queue)
+>>>>>>> aefbec1 (config)
 
         return self
     }
@@ -804,7 +955,11 @@ public class Request {
     /// - Returns:           The instance.
     @discardableResult
     public func redirect(using handler: RedirectHandler) -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             precondition(mutableState.redirectHandler == nil, "Redirect handler has already been set.")
             mutableState.redirectHandler = handler
         }
@@ -823,7 +978,11 @@ public class Request {
     /// - Returns:           The instance.
     @discardableResult
     public func cacheResponse(using handler: CachedResponseHandler) -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             precondition(mutableState.cachedResponseHandler == nil, "Cached response handler has already been set.")
             mutableState.cachedResponseHandler = handler
         }
@@ -844,7 +1003,11 @@ public class Request {
     /// - Returns:           The instance.
     @discardableResult
     public func cURLDescription(on queue: DispatchQueue, calling handler: @escaping (String) -> Void) -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             if mutableState.requests.last != nil {
                 queue.async { handler(self.cURLDescription()) }
             } else {
@@ -881,7 +1044,11 @@ public class Request {
     /// - Returns:   The instance.
     @discardableResult
     public func onURLRequestCreation(on queue: DispatchQueue = .main, perform handler: @escaping (URLRequest) -> Void) -> Self {
+<<<<<<< HEAD
         $mutableState.write { state in
+=======
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             if let request = state.requests.last {
                 queue.async { handler(request) }
             }
@@ -905,7 +1072,11 @@ public class Request {
     /// - Returns:   The instance.
     @discardableResult
     public func onURLSessionTaskCreation(on queue: DispatchQueue = .main, perform handler: @escaping (URLSessionTask) -> Void) -> Self {
+<<<<<<< HEAD
         $mutableState.write { state in
+=======
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             if let task = state.tasks.last {
                 queue.async { handler(task) }
             }
@@ -924,16 +1095,26 @@ public class Request {
     func onFinish(perform finishHandler: @escaping () -> Void) {
         guard !isFinished else { finishHandler(); return }
 
+<<<<<<< HEAD
         $mutableState.write { state in
+=======
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             state.finishHandlers.append(finishHandler)
         }
     }
 
     /// Final cleanup step executed when the instance finishes response serialization.
     func cleanup() {
+<<<<<<< HEAD
         let handlers = $mutableState.finishHandlers
         handlers.forEach { $0() }
         $mutableState.write { state in
+=======
+        let handlers = mutableState.finishHandlers
+        handlers.forEach { $0() }
+        mutableState.write { state in
+>>>>>>> aefbec1 (config)
             state.finishHandlers.removeAll()
         }
 
@@ -1099,7 +1280,11 @@ public class DataRequest: Request {
     /// `URLRequestConvertible` value used to create `URLRequest`s for this instance.
     public let convertible: URLRequestConvertible
     /// `Data` read from the server so far.
+<<<<<<< HEAD
     public var data: Data? { $dataMutableState.data }
+=======
+    public var data: Data? { dataMutableState.data }
+>>>>>>> aefbec1 (config)
 
     private struct DataMutableState {
         var data: Data?
@@ -1108,8 +1293,12 @@ public class DataRequest: Request {
                                             _ completionHandler: @escaping (ResponseDisposition) -> Void) -> Void)?
     }
 
+<<<<<<< HEAD
     @Protected
     private var dataMutableState = DataMutableState()
+=======
+    private let dataMutableState = Protected(DataMutableState())
+>>>>>>> aefbec1 (config)
 
     /// Creates a `DataRequest` using the provided parameters.
     ///
@@ -1142,7 +1331,11 @@ public class DataRequest: Request {
     override func reset() {
         super.reset()
 
+<<<<<<< HEAD
         $dataMutableState.write { mutableState in
+=======
+        dataMutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             mutableState.data = nil
         }
     }
@@ -1153,7 +1346,11 @@ public class DataRequest: Request {
     ///
     /// - Parameter data: The `Data` received.
     func didReceive(data: Data) {
+<<<<<<< HEAD
         $dataMutableState.write { mutableState in
+=======
+        dataMutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             if mutableState.data == nil {
                 mutableState.data = data
             } else {
@@ -1165,7 +1362,11 @@ public class DataRequest: Request {
     }
 
     func didReceiveResponse(_ response: HTTPURLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+<<<<<<< HEAD
         $dataMutableState.read { dataMutableState in
+=======
+        dataMutableState.read { dataMutableState in
+>>>>>>> aefbec1 (config)
             guard let httpResponseHandler = dataMutableState.httpResponseHandler else {
                 underlyingQueue.async { completionHandler(.allow) }
                 return
@@ -1174,7 +1375,11 @@ public class DataRequest: Request {
             httpResponseHandler.queue.async {
                 httpResponseHandler.handler(response) { disposition in
                     if disposition == .cancel {
+<<<<<<< HEAD
                         self.$mutableState.write { mutableState in
+=======
+                        self.mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
                             mutableState.state = .cancelled
                             mutableState.error = mutableState.error ?? AFError.explicitlyCancelled
                         }
@@ -1227,7 +1432,11 @@ public class DataRequest: Request {
                                   withResult: result)
         }
 
+<<<<<<< HEAD
         $validators.write { $0.append(validator) }
+=======
+        validators.write { $0.append(validator) }
+>>>>>>> aefbec1 (config)
 
         return self
     }
@@ -1248,7 +1457,11 @@ public class DataRequest: Request {
         perform handler: @escaping (_ response: HTTPURLResponse,
                                     _ completionHandler: @escaping (ResponseDisposition) -> Void) -> Void
     ) -> Self {
+<<<<<<< HEAD
         $dataMutableState.write { mutableState in
+=======
+        dataMutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             mutableState.httpResponseHandler = (queue, handler)
         }
 
@@ -1354,8 +1567,12 @@ public final class DataStreamRequest: Request {
                                             _ completionHandler: @escaping (ResponseDisposition) -> Void) -> Void)?
     }
 
+<<<<<<< HEAD
     @Protected
     var streamMutableState = StreamMutableState()
+=======
+    let streamMutableState = Protected(StreamMutableState())
+>>>>>>> aefbec1 (config)
 
     /// Creates a `DataStreamRequest` using the provided parameters.
     ///
@@ -1399,7 +1616,11 @@ public final class DataStreamRequest: Request {
     }
 
     override func finish(error: AFError? = nil) {
+<<<<<<< HEAD
         $streamMutableState.write { state in
+=======
+        streamMutableState.write { state in
+>>>>>>> aefbec1 (config)
             state.outputStream?.close()
         }
 
@@ -1407,7 +1628,11 @@ public final class DataStreamRequest: Request {
     }
 
     func didReceive(data: Data) {
+<<<<<<< HEAD
         $streamMutableState.write { state in
+=======
+        streamMutableState.write { state in
+>>>>>>> aefbec1 (config)
             #if !canImport(FoundationNetworking) // If we not using swift-corelibs-foundation.
             if let stream = state.outputStream {
                 underlyingQueue.async {
@@ -1423,7 +1648,11 @@ public final class DataStreamRequest: Request {
     }
 
     func didReceiveResponse(_ response: HTTPURLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+<<<<<<< HEAD
         $streamMutableState.read { dataMutableState in
+=======
+        streamMutableState.read { dataMutableState in
+>>>>>>> aefbec1 (config)
             guard let httpResponseHandler = dataMutableState.httpResponseHandler else {
                 underlyingQueue.async { completionHandler(.allow) }
                 return
@@ -1432,7 +1661,11 @@ public final class DataStreamRequest: Request {
             httpResponseHandler.queue.async {
                 httpResponseHandler.handler(response) { disposition in
                     if disposition == .cancel {
+<<<<<<< HEAD
                         self.$mutableState.write { mutableState in
+=======
+                        self.mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
                             mutableState.state = .cancelled
                             mutableState.error = mutableState.error ?? AFError.explicitlyCancelled
                         }
@@ -1468,7 +1701,11 @@ public final class DataStreamRequest: Request {
                                   withResult: result)
         }
 
+<<<<<<< HEAD
         $validators.write { $0.append(validator) }
+=======
+        validators.write { $0.append(validator) }
+>>>>>>> aefbec1 (config)
 
         return self
     }
@@ -1487,7 +1724,11 @@ public final class DataStreamRequest: Request {
         defer { resume() }
 
         var inputStream: InputStream?
+<<<<<<< HEAD
         $streamMutableState.write { state in
+=======
+        streamMutableState.write { state in
+>>>>>>> aefbec1 (config)
             Foundation.Stream.getBoundStreams(withBufferSize: bufferSize,
                                               inputStream: &inputStream,
                                               outputStream: &state.outputStream)
@@ -1514,7 +1755,11 @@ public final class DataStreamRequest: Request {
         perform handler: @escaping (_ response: HTTPURLResponse,
                                     _ completionHandler: @escaping (ResponseDisposition) -> Void) -> Void
     ) -> Self {
+<<<<<<< HEAD
         $streamMutableState.write { mutableState in
+=======
+        streamMutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             mutableState.httpResponseHandler = (queue, handler)
         }
 
@@ -1553,7 +1798,11 @@ public final class DataStreamRequest: Request {
         appendResponseSerializer {
             self.underlyingQueue.async {
                 self.responseSerializerDidComplete {
+<<<<<<< HEAD
                     self.$streamMutableState.write { state in
+=======
+                    self.streamMutableState.write { state in
+>>>>>>> aefbec1 (config)
                         guard state.numberOfExecutingStreams == 0 else {
                             state.enqueuedCompletionEvents.append {
                                 self.enqueueCompletion(on: queue, stream: stream)
@@ -1704,8 +1953,12 @@ public class DownloadRequest: Request {
     }
 
     /// Protected mutable state specific to `DownloadRequest`.
+<<<<<<< HEAD
     @Protected
     private var mutableDownloadState = DownloadRequestMutableState()
+=======
+    private let mutableDownloadState = Protected(DownloadRequestMutableState())
+>>>>>>> aefbec1 (config)
 
     /// If the download is resumable and is eventually cancelled or fails, this value may be used to resume the download
     /// using the `download(resumingWith data:)` API.
@@ -1713,14 +1966,24 @@ public class DownloadRequest: Request {
     /// - Note: For more information about `resumeData`, see [Apple's documentation](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask/1411634-cancel).
     public var resumeData: Data? {
         #if !canImport(FoundationNetworking) // If we not using swift-corelibs-foundation.
+<<<<<<< HEAD
         return $mutableDownloadState.resumeData ?? error?.downloadResumeData
         #else
         return $mutableDownloadState.resumeData
+=======
+        return mutableDownloadState.resumeData ?? error?.downloadResumeData
+        #else
+        return mutableDownloadState.resumeData
+>>>>>>> aefbec1 (config)
         #endif
     }
 
     /// If the download is successful, the `URL` where the file was downloaded.
+<<<<<<< HEAD
     public var fileURL: URL? { $mutableDownloadState.fileURL }
+=======
+    public var fileURL: URL? { mutableDownloadState.fileURL }
+>>>>>>> aefbec1 (config)
 
     // MARK: Initial State
 
@@ -1763,7 +2026,11 @@ public class DownloadRequest: Request {
     override func reset() {
         super.reset()
 
+<<<<<<< HEAD
         $mutableDownloadState.write {
+=======
+        mutableDownloadState.write {
+>>>>>>> aefbec1 (config)
             $0.resumeData = nil
             $0.fileURL = nil
         }
@@ -1778,7 +2045,11 @@ public class DownloadRequest: Request {
         eventMonitor?.request(self, didFinishDownloadingUsing: task, with: result)
 
         switch result {
+<<<<<<< HEAD
         case let .success(url): $mutableDownloadState.fileURL = url
+=======
+        case let .success(url): mutableDownloadState.fileURL = url
+>>>>>>> aefbec1 (config)
         case let .failure(error): self.error = error
         }
     }
@@ -1856,7 +2127,11 @@ public class DownloadRequest: Request {
     ///
     /// - Returns:                     The instance.
     private func cancel(optionallyProducingResumeData completionHandler: ((_ resumeData: Data?) -> Void)?) -> Self {
+<<<<<<< HEAD
         $mutableState.write { mutableState in
+=======
+        mutableState.write { mutableState in
+>>>>>>> aefbec1 (config)
             guard mutableState.state.canTransitionTo(.cancelled) else { return }
 
             mutableState.state = .cancelled
@@ -1872,7 +2147,11 @@ public class DownloadRequest: Request {
                 // Resume to ensure metrics are gathered.
                 task.resume()
                 task.cancel { resumeData in
+<<<<<<< HEAD
                     self.$mutableDownloadState.resumeData = resumeData
+=======
+                    self.mutableDownloadState.resumeData = resumeData
+>>>>>>> aefbec1 (config)
                     self.underlyingQueue.async { self.didCancelTask(task) }
                     completionHandler(resumeData)
                 }
@@ -1912,7 +2191,11 @@ public class DownloadRequest: Request {
                                   withResult: result)
         }
 
+<<<<<<< HEAD
         $validators.write { $0.append(validator) }
+=======
+        validators.write { $0.append(validator) }
+>>>>>>> aefbec1 (config)
 
         return self
     }

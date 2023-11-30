@@ -1,11 +1,19 @@
 ![Alamofire: Elegant Networking in Swift](https://raw.githubusercontent.com/Alamofire/Alamofire/master/Resources/AlamofireLogo.png)
 
+<<<<<<< HEAD
 [![Swift](https://img.shields.io/badge/Swift-5.5_5.6_5.7_5.8-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.5_5.6_5.7_5.8-Orange?style=flat-square)
 [![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_Linux_Windows-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_Linux_Windows-Green?style=flat-square)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 [![Twitter](https://img.shields.io/badge/twitter-@AlamofireSF-blue.svg?style=flat-square)](https://twitter.com/AlamofireSF)
+=======
+[![Swift](https://img.shields.io/badge/Swift-5.6_5.7_5.8_5.9-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.6_5.7_5.8_5.9-Orange?style=flat-square)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_visionOS_Linux_Windows_Android-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS_Linux_Windows_Android-Green?style=flat-square)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
+>>>>>>> aefbec1 (config)
 [![Swift Forums](https://img.shields.io/badge/Swift_Forums-Alamofire-orange?style=flat-square)](https://forums.swift.org/c/related-projects/alamofire/37)
 
 Alamofire is an HTTP networking library written in Swift.
@@ -52,6 +60,36 @@ Alamofire is an HTTP networking library written in Swift.
 - [x] Comprehensive Unit and Integration Test Coverage
 - [x] [Complete Documentation](https://alamofire.github.io/Alamofire)
 
+<<<<<<< HEAD
+=======
+## Write Requests Fast!
+
+Alamofire's compact syntax and extensive feature set allow requests with powerful features like automatic retry to be written in just a few lines of code.
+
+```swift
+// Automatic String to URL conversion, Swift concurrency support, and automatic retry.
+let response = await AF.request("https://httpbin.org/get", interceptor: .retryPolicy)
+                       // Automatic HTTP Basic Auth.
+                       .authenticate(username: "user", password: "pass")
+                       // Caching customization.
+                       .cacheResponse(using: .cache)
+                       // Redirect customization.
+                       .redirect(using: .follow)
+                       // Validate response code and Content-Type.
+                       .validate()
+                       // Produce a cURL command for the request.
+                       .cURLDescription { description in
+                         print(description)
+                       }
+                       // Automatic Decodable support with background parsing.
+                       .serializingDecodable(DecodableType.self)
+                       // Await the full response with metrics and a parsed body.
+                       .response
+// Detailed response description for easy debugging.
+debugPrint(response)
+```
+
+>>>>>>> aefbec1 (config)
 ## Component Libraries
 
 In order to keep Alamofire focused specifically on core networking implementations, additional component libraries have been created by the [Alamofire Software Foundation](https://github.com/Alamofire/Foundation) to bring additional functionality to the Alamofire ecosystem.
@@ -61,6 +99,7 @@ In order to keep Alamofire focused specifically on core networking implementatio
 
 ## Requirements
 
+<<<<<<< HEAD
 | Platform | Minimum Swift Version | Installation | Status |
 | --- | --- | --- | --- |
 | iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+ | 5.5 | [CocoaPods](#cocoapods), [Carthage](#carthage), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
@@ -70,12 +109,29 @@ In order to keep Alamofire focused specifically on core networking implementatio
 #### Known Issues on Linux and Windows
 
 Alamofire builds on Linux and Windows but there are missing features and many issues in the underlying `swift-corelibs-foundation` that prevent full functionality and may cause crashes. These include:
+=======
+| Platform                                             | Minimum Swift Version | Installation                                                                                                         | Status                   |
+| ---------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+ | 5.6                   | [CocoaPods](#cocoapods), [Carthage](#carthage), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested             |
+| Linux                                                | Latest Only           | [Swift Package Manager](#swift-package-manager)                                                                      | Building But Unsupported |
+| Windows                                              | Latest Only           | [Swift Package Manager](#swift-package-manager)                                                                      | Building But Unsupported |
+| Android                                              | Latest Only           | [Swift Package Manager](#swift-package-manager)                                                                      | Building But Unsupported |
+
+#### Known Issues on Linux and Windows
+
+Alamofire builds on Linux, Windows, and Android but there are missing features and many issues in the underlying `swift-corelibs-foundation` that prevent full functionality and may cause crashes. These include:
+
+>>>>>>> aefbec1 (config)
 - `ServerTrustManager` and associated certificate functionality is unavailable, so there is no certificate pinning and no client certificate support.
 - Various methods of HTTP authentication may crash, including HTTP Basic and HTTP Digest. Crashes may occur if responses contain server challenges.
 - Cache control through `CachedResponseHandler` and associated APIs is unavailable, as the underlying delegate methods aren't called.
 - `URLSessionTaskMetrics` are never gathered.
 
+<<<<<<< HEAD
 Due to these issues, Alamofire is unsupported on Linux and Windows. Please report any crashes to the [Swift bug reporter](https://bugs.swift.org).
+=======
+Due to these issues, Alamofire is unsupported on Linux, Windows, and Android. Please report any crashes to the [Swift bug reporter](https://bugs.swift.org).
+>>>>>>> aefbec1 (config)
 
 ## Migration Guides
 
@@ -85,11 +141,19 @@ Due to these issues, Alamofire is unsupported on Linux and Windows. Please repor
 - [Alamofire 2.0 Migration Guide](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%202.0%20Migration%20Guide.md)
 
 ## Communication
+<<<<<<< HEAD
+=======
+
+>>>>>>> aefbec1 (config)
 - If you **need help with making network requests** using Alamofire, use [Stack Overflow](https://stackoverflow.com/questions/tagged/alamofire) and tag `alamofire`.
 - If you need to **find or understand an API**, check [our documentation](http://alamofire.github.io/Alamofire/) or [Apple's documentation for `URLSession`](https://developer.apple.com/documentation/foundation/url_loading_system), on top of which Alamofire is built.
 - If you need **help with an Alamofire feature**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire).
 - If you'd like to **discuss Alamofire best practices**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire).
+<<<<<<< HEAD
 - If you'd like to **discuss a feature request**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire). 
+=======
+- If you'd like to **discuss a feature request**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire).
+>>>>>>> aefbec1 (config)
 - If you **found a bug**, open an issue here on GitHub and follow the guide. The more detail the better!
 
 ## Installation
@@ -112,13 +176,21 @@ github "Alamofire/Alamofire"
 
 ### Swift Package Manager
 
+<<<<<<< HEAD
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. 
+=======
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+>>>>>>> aefbec1 (config)
 
 Once you have your Swift package set up, adding Alamofire as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
 ```swift
 dependencies: [
+<<<<<<< HEAD
     .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.6.4"))
+=======
+    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.8.1"))
+>>>>>>> aefbec1 (config)
 ]
 ```
 
@@ -142,7 +214,11 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 - Open the new `Alamofire` folder, and drag the `Alamofire.xcodeproj` into the Project Navigator of your application's Xcode project.
 
+<<<<<<< HEAD
     > It should appear nested underneath your application's blue project icon. Whether it is above or below all the other Xcode groups does not matter.
+=======
+  > It should appear nested underneath your application's blue project icon. Whether it is above or below all the other Xcode groups does not matter.
+>>>>>>> aefbec1 (config)
 
 - Select the `Alamofire.xcodeproj` in the Project Navigator and verify the deployment target matches that of your application target.
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
@@ -150,11 +226,19 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Click on the `+` button under the "Embedded Binaries" section.
 - You will see two different `Alamofire.xcodeproj` folders each with two different versions of the `Alamofire.framework` nested inside a `Products` folder.
 
+<<<<<<< HEAD
     > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `Alamofire.framework`.
 
 - Select the top `Alamofire.framework` for iOS and the bottom one for macOS.
 
     > You can verify which one you selected by inspecting the build log for your project. The build target for `Alamofire` will be listed as `Alamofire iOS`, `Alamofire macOS`, `Alamofire tvOS`, or `Alamofire watchOS`.
+=======
+  > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `Alamofire.framework`.
+
+- Select the top `Alamofire.framework` for iOS and the bottom one for macOS.
+
+  > You can verify which one you selected by inspecting the build log for your project. The build target for `Alamofire` will be listed as `Alamofire iOS`, `Alamofire macOS`, `Alamofire tvOS`, or `Alamofire watchOS`.
+>>>>>>> aefbec1 (config)
 
 - And that's it!
 

@@ -28,8 +28,13 @@ import Foundation
 final class MultipartUpload {
     lazy var result = Result { try build() }
 
+<<<<<<< HEAD
     @Protected
     private(set) var multipartFormData: MultipartFormData
+=======
+    private let multipartFormData: Protected<MultipartFormData>
+
+>>>>>>> aefbec1 (config)
     let encodingMemoryThreshold: UInt64
     let request: URLRequestConvertible
     let fileManager: FileManager
@@ -40,13 +45,22 @@ final class MultipartUpload {
         self.encodingMemoryThreshold = encodingMemoryThreshold
         self.request = request
         fileManager = multipartFormData.fileManager
+<<<<<<< HEAD
         self.multipartFormData = multipartFormData
+=======
+        self.multipartFormData = Protected(multipartFormData)
+>>>>>>> aefbec1 (config)
     }
 
     func build() throws -> UploadRequest.Uploadable {
         let uploadable: UploadRequest.Uploadable
+<<<<<<< HEAD
         if $multipartFormData.contentLength < encodingMemoryThreshold {
             let data = try $multipartFormData.read { try $0.encode() }
+=======
+        if multipartFormData.contentLength < encodingMemoryThreshold {
+            let data = try multipartFormData.read { try $0.encode() }
+>>>>>>> aefbec1 (config)
 
             uploadable = .data(data)
         } else {
@@ -58,7 +72,11 @@ final class MultipartUpload {
             try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
 
             do {
+<<<<<<< HEAD
                 try $multipartFormData.read { try $0.writeEncodedData(to: fileURL) }
+=======
+                try multipartFormData.read { try $0.writeEncodedData(to: fileURL) }
+>>>>>>> aefbec1 (config)
             } catch {
                 // Cleanup after attempted write if it fails.
                 try? fileManager.removeItem(at: fileURL)
@@ -76,7 +94,11 @@ extension MultipartUpload: UploadConvertible {
     func asURLRequest() throws -> URLRequest {
         var urlRequest = try request.asURLRequest()
 
+<<<<<<< HEAD
         $multipartFormData.read { multipartFormData in
+=======
+        multipartFormData.read { multipartFormData in
+>>>>>>> aefbec1 (config)
             urlRequest.headers.add(.contentType(multipartFormData.contentType))
         }
 

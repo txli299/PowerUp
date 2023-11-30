@@ -49,12 +49,15 @@ extension Lock {
     }
 }
 
+<<<<<<< HEAD
 #if os(Linux) || os(Windows) || os(Android)
 
 extension NSLock: Lock {}
 
 #endif
 
+=======
+>>>>>>> aefbec1 (config)
 #if canImport(Darwin)
 /// An `os_unfair_lock` wrapper.
 final class UnfairLock: Lock {
@@ -78,6 +81,7 @@ final class UnfairLock: Lock {
         os_unfair_lock_unlock(unfairLock)
     }
 }
+<<<<<<< HEAD
 #endif
 
 /// A thread-safe wrapper around a value.
@@ -107,12 +111,41 @@ final class Protected<T> {
         value = wrappedValue
     }
 
+=======
+
+#elseif canImport(Foundation)
+extension NSLock: Lock {}
+#else
+#error("This platform needs a Lock-conforming type without Foundation.")
+#endif
+
+/// A thread-safe wrapper around a value.
+@dynamicMemberLookup
+final class Protected<Value> {
+    #if canImport(Darwin)
+    private let lock = UnfairLock()
+    #elseif canImport(Foundation)
+    private let lock = NSLock()
+    #else
+    #error("This platform needs a Lock-conforming type without Foundation.")
+    #endif
+    private var value: Value
+
+    init(_ value: Value) {
+        self.value = value
+    }
+
+>>>>>>> aefbec1 (config)
     /// Synchronously read or transform the contained value.
     ///
     /// - Parameter closure: The closure to execute.
     ///
     /// - Returns:           The return value of the closure passed.
+<<<<<<< HEAD
     func read<U>(_ closure: (T) throws -> U) rethrows -> U {
+=======
+    func read<U>(_ closure: (Value) throws -> U) rethrows -> U {
+>>>>>>> aefbec1 (config)
         try lock.around { try closure(self.value) }
     }
 
@@ -122,21 +155,44 @@ final class Protected<T> {
     ///
     /// - Returns:           The modified value.
     @discardableResult
+<<<<<<< HEAD
     func write<U>(_ closure: (inout T) throws -> U) rethrows -> U {
         try lock.around { try closure(&self.value) }
     }
 
     subscript<Property>(dynamicMember keyPath: WritableKeyPath<T, Property>) -> Property {
+=======
+    func write<U>(_ closure: (inout Value) throws -> U) rethrows -> U {
+        try lock.around { try closure(&self.value) }
+    }
+
+    /// Synchronously update the protected value.
+    ///
+    /// - Parameter value: The `Value`.
+    func write(_ value: Value) {
+        write { $0 = value }
+    }
+
+    subscript<Property>(dynamicMember keyPath: WritableKeyPath<Value, Property>) -> Property {
+>>>>>>> aefbec1 (config)
         get { lock.around { value[keyPath: keyPath] } }
         set { lock.around { value[keyPath: keyPath] = newValue } }
     }
 
+<<<<<<< HEAD
     subscript<Property>(dynamicMember keyPath: KeyPath<T, Property>) -> Property {
+=======
+    subscript<Property>(dynamicMember keyPath: KeyPath<Value, Property>) -> Property {
+>>>>>>> aefbec1 (config)
         lock.around { value[keyPath: keyPath] }
     }
 }
 
+<<<<<<< HEAD
 extension Protected where T == Request.MutableState {
+=======
+extension Protected where Value == Request.MutableState {
+>>>>>>> aefbec1 (config)
     /// Attempts to transition to the passed `State`.
     ///
     /// - Parameter state: The `State` to attempt transition to.
@@ -159,3 +215,18 @@ extension Protected where T == Request.MutableState {
         lock.around { perform(value.state) }
     }
 }
+<<<<<<< HEAD
+=======
+
+extension Protected: Equatable where Value: Equatable {
+    static func ==(lhs: Protected<Value>, rhs: Protected<Value>) -> Bool {
+        lhs.read { left in rhs.read { right in left == right }}
+    }
+}
+
+extension Protected: Hashable where Value: Hashable {
+    func hash(into hasher: inout Hasher) {
+        read { hasher.combine($0) }
+    }
+}
+>>>>>>> aefbec1 (config)
