@@ -7,11 +7,14 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAuth
+import Alamofire
 
 class TimeViewController: UIViewController, CLLocationManagerDelegate {
     let timeView = TimeScreen()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
+    var activeOrders = [OrderDto]()
     var cafes: [CafeWithDistance] = []
 
     override func viewDidLoad() {
@@ -19,14 +22,80 @@ class TimeViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(timeView)
         setupLocationManager()
         setupConstraints()
-        
-        // Add a tap gesture recognizer to the bestCafeLabel
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bestCafeLabelTapped))
-        timeView.bestCafeLabel.isUserInteractionEnabled = true
-        timeView.bestCafeLabel.addGestureRecognizer(tapGesture)
+        retrieveUserActiveOrder()
+        timeView.tableViewTime.separatorStyle = .none
+        //MARK: patching the table view delegate and datasource to controller...
+        timeView.tableViewTime.delegate = self
+        timeView.tableViewTime.dataSource = self
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bestCafeLabelTapped))
+//        timeView.bestCafeLabel.isUserInteractionEnabled = true
+//        timeView.bestCafeLabel.addGestureRecognizer(tapGesture)
     }
+    
     @objc func bestCafeLabelTapped() {
         displayCafes() // This function will present all cafes to the user
+    }
+    
+    func retrieveUserActiveOrder(){
+        if let user = FirebaseAuth.Auth.auth().currentUser {
+            if let url = URL(string: "http://localhost:8080/user/currentOrders/"+user.uid){
+                    AF.request(url, method: .get)
+                        .responseData(completionHandler: { response in
+                        //MARK: retrieving the status code...
+                        let status = response.response?.statusCode
+                        
+                        switch response.result{
+                        case .success(let data):
+                            print(data)
+                            //MARK: there was no network error...
+                            
+                            //MARK: status code is Optional, so unwrapping it...
+                            if let uwStatusCode = status{
+                                switch uwStatusCode{
+                                    case 200...299:
+                                    //MARK: the request was valid 200-level...
+                                        let decoder = JSONDecoder()
+                                        do{
+                                            let orders = try decoder.decode([OrderDto].self, from: data)
+                                            self.activeOrders = orders
+                                            
+                                            DispatchQueue.main.async {
+                                                self.timeView.tableViewTime.reloadData()
+                                                if (self.activeOrders.count>0){
+                                                    self.timeView.bestCafeLabel.text = "Tap the order to deactivate."
+                                                }else{
+                                                    self.timeView.bestCafeLabel.text = "You do not have activate orders now."
+                                                }
+                                            }
+
+                                            
+                                        }catch{
+
+                                        }
+                                        break
+                            
+                                    case 400...499:
+                                    //MARK: the request was not valid 400-level...
+                                        print(data)
+                                        break
+                            
+                                    default:
+                                    //MARK: probably a 500-level error...
+                                        print(data)
+                                        break
+                            
+                                }
+                            }
+                            break
+                            
+                        case .failure(let error):
+                            //MARK: there was a network error...
+                            print(error)
+                            break
+                        }
+                    })
+                }
+        }
     }
     func setupLocationManager() {
         locationManager.delegate = self
@@ -83,6 +152,77 @@ class TimeViewController: UIViewController, CLLocationManagerDelegate {
             if let closestCafe = self.cafes.first {
                 self.timeView.bestCafeLabel.text = closestCafe.cafe.name
                 // Update additional labels if needed
+            }
+        }
+    }
+    func popUpWindowToDeactivate(indexPath: IndexPath){
+        let alertController = UIAlertController(title: "Are you sure you want to deactivate this machine and pay?", message: "Please make your choice", preferredStyle: .alert)
+
+                // Define the action to be taken when the user taps the 'OK' button
+                let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    // Retrieve the input from the text field
+                    
+                    self.buttonTappedAt(indexPath: indexPath)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                    // Handle cancel action
+                    print("Cancel action selected")
+                }
+
+                // Add the confirm action to the alert controller
+                alertController.addAction(confirmAction)
+                alertController.addAction(cancelAction)
+                // Present the alert controller
+                present(alertController, animated: true)
+    }
+    
+    func buttonTappedAt(indexPath: IndexPath) {
+        if let user = FirebaseAuth.Auth.auth().currentUser {
+            if let url = URL(string: "http://localhost:8080/machine/deactivate"){
+                
+                AF.request(url, method:.post, parameters:
+                            [
+                                "userId": user.uid,
+                                "orderId": activeOrders[indexPath.row].orderId
+                            ])
+                .responseString(completionHandler: { response in
+                    //MARK: retrieving the status code...
+                    let status = response.response?.statusCode
+                    
+                    switch response.result{
+                    case .success(let data):
+                        //MARK: there was no network error...
+                        
+                        //MARK: status code is Optional, so unwrapping it...
+                        if let uwStatusCode = status{
+                            switch uwStatusCode{
+                            case 200...299:
+                                //MARK: the request was valid 200-level...
+                                self.retrieveUserActiveOrder()
+                                break
+                                
+                            case 400...499:
+                                //MARK: the request was not valid 400-level...
+                                print(data)
+                                break
+                                
+                            default:
+                                //MARK: probably a 500-level error...
+                                print(data)
+                                break
+                                
+                            }
+                        }
+                        break
+                        
+                    case .failure(let error):
+                        //MARK: there was a network error...
+                        print(error)
+                        break
+                    }
+                })
+            }else{
+                //alert that the URL is invalid...
             }
         }
     }
@@ -144,4 +284,30 @@ class TimeViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+
+extension TimeViewController: UITableViewDelegate, UITableViewDataSource{
+    //MARK: returns the number of rows in the current section...
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return activeOrders.count
+    }
+    
+    //MARK: populate a cell for the currecnt row...
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "times", for: indexPath) as! TimeTableViewCell
+        cell.labelMachine.text = "Machine: \(activeOrders[indexPath.row].machineName)"
+         let uwTime = activeOrders[indexPath.row].timeForNow
+            cell.labelTime.text = "Duration: \(uwTime) hours"
+        let uwMoney = activeOrders[indexPath.row].moneyForNow
+            cell.labelAmount.text = "Cost: $\(uwMoney)"
+        //MARK: setting the image of the receipt...
+        return cell
+    }
+    
+    //MARK: deal with user interaction with a cell...
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.popUpWindowToDeactivate(indexPath: indexPath)
+    }
+
+
+}
 

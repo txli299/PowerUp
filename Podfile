@@ -8,6 +8,7 @@ pod 'SwiftKeychainWrapper'
 pod 'Alamofire'
 
   # Pods for PowerUp
+  pod 'Alamofire'
 	
   target 'PowerUpTests' do
     inherit! :search_paths

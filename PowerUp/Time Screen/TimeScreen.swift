@@ -13,10 +13,7 @@ class TimeScreen: UIView {
     var myTimeLabel: UILabel!
     var infoContainer: UIView!
     var bestCafeLabel: UILabel!
-    var addButton = UIButton()
-    var pcLabel: UILabel!
-    var additionalInfoContainer: UIView!
-    var timeLeftLabel: UILabel!
+    var tableViewTime: UITableView!
     
     let customButtonColor = UIColor(red: 0.45, green: 0.72, blue: 1, alpha: 1.0)
     let customStartBgk = UIColor(red: 0.035, green: 0.51, blue: 0.89, alpha: 1.0)
@@ -28,49 +25,31 @@ class TimeScreen: UIView {
         setUpTopContainer()
         setMyTime()
         setUpInfoContainer()
+        setupTableViewTime()
         setUpLabels()
-        setPCLabel()
-        setUpAdditionalInfoContainer()
-        setTimeLeftLabel()
-        setButton()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    func setButton(){
-        addButton = UIButton()
-        addButton.setTitle("+ Add Time", for: .normal)
-        addButton.backgroundColor = customButtonColor
-        addButton.layer.cornerRadius = 20
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.setTitleColor(UIColor.white, for: .normal)
-        additionalInfoContainer.addSubview(addButton)
         
+        initConstraints()
     }
     
-    func setTimeLeftLabel(){
-        
-        timeLeftLabel = UILabel()
-        timeLeftLabel.text = "Time Left:"
-        timeLeftLabel.font = UIFont.systemFont(ofSize: 18)
-        timeLeftLabel.textColor = .black
-        timeLeftLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(timeLeftLabel)
+
+    func setupTableViewTime(){
+        tableViewTime = UITableView()
+        tableViewTime.register(TimeTableViewCell.self, forCellReuseIdentifier: "times")
+        tableViewTime.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tableViewTime)
     }
-    func setUpAdditionalInfoContainer() {
-        additionalInfoContainer = UIView()
-        additionalInfoContainer.backgroundColor = UIColor.white
-        additionalInfoContainer.layer.cornerRadius = 10
-        additionalInfoContainer.layer.shadowColor = UIColor.black.cgColor
-        additionalInfoContainer.layer.shadowOpacity = 0.5
-        additionalInfoContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
-        additionalInfoContainer.layer.shadowRadius = 4
-        additionalInfoContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerTop.addSubview(additionalInfoContainer)
-    }
+//    func setUpAdditionalInfoContainer() {
+//        additionalInfoContainer = UIView()
+//        additionalInfoContainer.backgroundColor = UIColor.white
+//        additionalInfoContainer.layer.cornerRadius = 10
+//        additionalInfoContainer.layer.shadowColor = UIColor.black.cgColor
+//        additionalInfoContainer.layer.shadowOpacity = 0.5
+//        additionalInfoContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        additionalInfoContainer.layer.shadowRadius = 4
+//        additionalInfoContainer.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        containerTop.addSubview(additionalInfoContainer)
+//    }
     func setUpInfoContainer(){
         infoContainer = UIView()
         infoContainer.backgroundColor = customButtonColor  // Change color if needed
@@ -107,17 +86,6 @@ class TimeScreen: UIView {
         
     }
     
-    func setPCLabel(){
-        
-        pcLabel = UILabel()
-        pcLabel.text = "PC 1"
-        pcLabel.font = UIFont.systemFont(ofSize: 18)
-        pcLabel.textColor = .black
-        pcLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(pcLabel)
-        
-    }
-    
     func initConstraints(){
         NSLayoutConstraint.activate([
             
@@ -137,26 +105,16 @@ class TimeScreen: UIView {
             bestCafeLabel.leadingAnchor.constraint(equalTo: infoContainer.leadingAnchor, constant: 8),
             bestCafeLabel.topAnchor.constraint(equalTo: infoContainer.topAnchor, constant: 8),
             
-            //all together
-            additionalInfoContainer.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 30),
-            additionalInfoContainer.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            additionalInfoContainer.heightAnchor.constraint(equalToConstant: 175), // Set the desired height
-            additionalInfoContainer.topAnchor.constraint(equalTo: containerTop.bottomAnchor, constant: -10),
-            
-            pcLabel.leadingAnchor.constraint(equalTo: additionalInfoContainer.leadingAnchor, constant: 8),
-            pcLabel.topAnchor.constraint(equalTo: additionalInfoContainer.topAnchor, constant: 8),
-            
-            timeLeftLabel.leadingAnchor.constraint(equalTo: pcLabel.leadingAnchor),
-            timeLeftLabel.topAnchor.constraint(equalTo: pcLabel.bottomAnchor, constant: 12),
-            
-            addButton.centerXAnchor.constraint(equalTo: additionalInfoContainer.centerXAnchor),
-//            addButton.centerYAnchor.constraint(equalTo: additionalInfoContainer.centerYAnchor),
-            addButton.bottomAnchor.constraint(equalTo: additionalInfoContainer.bottomAnchor, constant: -20), // Adjust the constant to position the button higher or lower
-            addButton.widthAnchor.constraint(equalToConstant: 160),
-            addButton.heightAnchor.constraint(equalToConstant: 40),
+            tableViewTime.topAnchor.constraint(equalTo: containerTop.bottomAnchor, constant: 20),
 
+            tableViewTime.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            tableViewTime.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            tableViewTime.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8),
 
         ])
         
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
