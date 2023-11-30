@@ -27,13 +27,16 @@ class TimeViewController: UIViewController, CLLocationManagerDelegate {
         //MARK: patching the table view delegate and datasource to controller...
         timeView.tableViewTime.delegate = self
         timeView.tableViewTime.dataSource = self
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bestCafeLabelTapped))
-//        timeView.bestCafeLabel.isUserInteractionEnabled = true
-//        timeView.bestCafeLabel.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bestCafeLabelTapped))
+        timeView.bestCafeLabel.isUserInteractionEnabled = true
+        timeView.bestCafeLabel.addGestureRecognizer(tapGesture)
     }
     
     @objc func bestCafeLabelTapped() {
-        displayCafes() // This function will present all cafes to the user
+        retrieveUserActiveOrder() // This function will present all cafes to the user
+    }
+    @objc func refreshTapped() {
+        retrieveUserActiveOrder()
     }
     
     func retrieveUserActiveOrder(){

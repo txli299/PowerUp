@@ -19,7 +19,6 @@
 		1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* LoginViewController.swift */; };
 		1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* LoginView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
-		334B46292B0B739B009918ED /* UserCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B46282B0B739B009918ED /* UserCreditService.swift */; };
 		334B462B2B0B78F9009918ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B462A2B0B78F9009918ED /* User.swift */; };
 		33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D0094C2AFECF36004BB2AE /* StripePaymentsUI */; };
 		33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */; };
@@ -89,7 +88,6 @@
 		1129A88B2ACB5ED30054E020 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2E2C196D951641A7DAA32038 /* Pods_PowerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		334B46282B0B739B009918ED /* UserCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditService.swift; sourceTree = "<group>"; };
 		334B462A2B0B78F9009918ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		33E1BD932B02A54500E70B4A /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 				858F15502ABB77F1002B64C1 /* Info.plist */,
 				33E1BD952B02A54E00E70B4A /* Checkout Screen */,
 				33E1BD9A2B02BEC500E70B4A /* Payment Screen */,
-				334B46282B0B739B009918ED /* UserCreditService.swift */,
 				334B462A2B0B78F9009918ED /* User.swift */,
 				850037672B102D09009C5E8B /* APIConfigs.swift */,
 			);
@@ -619,7 +616,6 @@
 			files = (
 				111834A72B0ED55A00EB24C4 /* OrderDto.swift in Sources */,
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
-				334B46292B0B739B009918ED /* UserCreditService.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
