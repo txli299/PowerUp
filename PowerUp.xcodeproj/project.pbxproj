@@ -17,6 +17,13 @@
 		1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A8892ACB5E990054E020 /* LoginViewController.swift */; };
 		1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129A88B2ACB5ED30054E020 /* LoginView.swift */; };
 		11433FBE2ABCBCDD005AA716 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 11433FBD2ABCBCDD005AA716 /* .gitignore */; };
+		334B46292B0B739B009918ED /* UserCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B46282B0B739B009918ED /* UserCreditService.swift */; };
+		334B462B2B0B78F9009918ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334B462A2B0B78F9009918ED /* User.swift */; };
+		33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D0094C2AFECF36004BB2AE /* StripePaymentsUI */; };
+		33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */; };
+		33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD932B02A54500E70B4A /* CheckOutView.swift */; };
+		33E1BD972B02B00500E70B4A /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD962B02B00500E70B4A /* PaymentViewController.swift */; };
+		33E1BD992B02B01D00E70B4A /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1BD982B02B01D00E70B4A /* PaymentView.swift */; };
 		445294082AFDFB0300B1A3D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445294072AFDFB0300B1A3D5 /* ProfileView.swift */; };
 		4452940A2AFDFB8900B1A3D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445294092AFDFB8900B1A3D5 /* ProfileViewController.swift */; };
 		4452940C2B00A27A00B1A3D5 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452940B2B00A27A00B1A3D5 /* KeychainService.swift */; };
@@ -78,6 +85,12 @@
 		1129A88B2ACB5ED30054E020 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11433FBD2ABCBCDD005AA716 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2E2C196D951641A7DAA32038 /* Pods_PowerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		334B46282B0B739B009918ED /* UserCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditService.swift; sourceTree = "<group>"; };
+		334B462A2B0B78F9009918ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		33E1BD932B02A54500E70B4A /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
+		33E1BD962B02B00500E70B4A /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		33E1BD982B02B01D00E70B4A /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		3BF5735E8EB5E7E4240F0C71 /* Pods-PowerUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUp.debug.xcconfig"; path = "Target Support Files/Pods-PowerUp/Pods-PowerUp.debug.xcconfig"; sourceTree = "<group>"; };
 		4199B8D07DD0FF42E3618594 /* Pods-PowerUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerUpTests.release.xcconfig"; path = "Target Support Files/Pods-PowerUpTests/Pods-PowerUpTests.release.xcconfig"; sourceTree = "<group>"; };
 		445294072AFDFB0300B1A3D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -125,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D0094D2AFECF36004BB2AE /* StripePaymentsUI in Frameworks */,
 				8583334D2AE0AA9E005540D6 /* FirebaseAuth in Frameworks */,
 				7454DD130D9425939073494A /* Pods_PowerUp.framework in Frameworks */,
 			);
@@ -184,6 +198,24 @@
 				4199B8D07DD0FF42E3618594 /* Pods-PowerUpTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		33E1BD952B02A54E00E70B4A /* Checkout Screen */ = {
+			isa = PBXGroup;
+			children = (
+				33E1BD912B02A52700E70B4A /* CheckOutViewController.swift */,
+				33E1BD932B02A54500E70B4A /* CheckOutView.swift */,
+			);
+			path = "Checkout Screen";
+			sourceTree = "<group>";
+		};
+		33E1BD9A2B02BEC500E70B4A /* Payment Screen */ = {
+			isa = PBXGroup;
+			children = (
+				33E1BD962B02B00500E70B4A /* PaymentViewController.swift */,
+				33E1BD982B02B01D00E70B4A /* PaymentView.swift */,
+			);
+			path = "Payment Screen";
 			sourceTree = "<group>";
 		};
 		44B8ACCB2B02C0BF00D1BAA4 /* Keychain */ = {
@@ -257,6 +289,10 @@
 				858F154B2ABB77F1002B64C1 /* Assets.xcassets */,
 				858F154D2ABB77F1002B64C1 /* LaunchScreen.storyboard */,
 				858F15502ABB77F1002B64C1 /* Info.plist */,
+				33E1BD952B02A54E00E70B4A /* Checkout Screen */,
+				33E1BD9A2B02BEC500E70B4A /* Payment Screen */,
+				334B46282B0B739B009918ED /* UserCreditService.swift */,
+				334B462A2B0B78F9009918ED /* User.swift */,
 				850037672B102D09009C5E8B /* APIConfigs.swift */,
 			);
 			path = PowerUp;
@@ -345,6 +381,7 @@
 			name = PowerUp;
 			packageProductDependencies = (
 				8583334C2AE0AA9E005540D6 /* FirebaseAuth */,
+				33D0094C2AFECF36004BB2AE /* StripePaymentsUI */,
 			);
 			productName = PowerUp;
 			productReference = 858F153F2ABB77F0002B64C1 /* PowerUp.app */;
@@ -397,7 +434,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					858F153E2ABB77F0002B64C1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -423,6 +460,7 @@
 			mainGroup = 858F15362ABB77F0002B64C1;
 			packageReferences = (
 				8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
 			);
 			productRefGroup = 858F15402ABB77F0002B64C1 /* Products */;
 			projectDirPath = "";
@@ -574,12 +612,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				858F16AE2ACA7357002B64C1 /* StoreViewController.swift in Sources */,
+				334B46292B0B739B009918ED /* UserCreditService.swift in Sources */,
 				858F15472ABB77F0002B64C1 /* ViewController.swift in Sources */,
 				858F16B32ACB978C002B64C1 /* TimeScreen.swift in Sources */,
 				858F15432ABB77F0002B64C1 /* AppDelegate.swift in Sources */,
 				858F16C92ACE60C6002B64C1 /* StartScreen.swift in Sources */,
 				111834A12B0C137D00EB24C4 /* Machine.swift in Sources */,
 				858F16C82ACE60C6002B64C1 /* StartScreenController.swift in Sources */,
+				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
+				33E1BD972B02B00500E70B4A /* PaymentViewController.swift in Sources */,
+				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
 				850037642B102BC6009C5E8B /* ActivateMachineViewController.swift in Sources */,
 				1129A88A2ACB5E990054E020 /* LoginViewController.swift in Sources */,
 				111834A42B0C137D00EB24C4 /* Cafe.swift in Sources */,
@@ -588,6 +630,7 @@
 				858333512AE0AB5F005540D6 /* RegisterView.swift in Sources */,
 				4452940A2AFDFB8900B1A3D5 /* ProfileViewController.swift in Sources */,
 				858F16C32ACE60A6002B64C1 /* WalletViewController.swift in Sources */,
+				33E1BD992B02B01D00E70B4A /* PaymentView.swift in Sources */,
 				1118349A2B0C131600EB24C4 /* MapViewController.swift in Sources */,
 				445294082AFDFB0300B1A3D5 /* ProfileView.swift in Sources */,
 				850037662B102BEF009C5E8B /* ActivateMachineView.swift in Sources */,
@@ -597,12 +640,15 @@
 				1129A88C2ACB5ED30054E020 /* LoginView.swift in Sources */,
 				1118349C2B0C131D00EB24C4 /* ContentView.swift in Sources */,
 				8583334F2AE0AB4A005540D6 /* RegisterViewController.swift in Sources */,
+				33E1BD942B02A54500E70B4A /* CheckOutView.swift in Sources */,
 				858F16B52ACB97A1002B64C1 /* TimeViewController.swift in Sources */,
+				33E1BD922B02A52700E70B4A /* CheckOutViewController.swift in Sources */,
 				858F16C42ACE60A6002B64C1 /* WalletView.swift in Sources */,
 				858F16B02ACA73C5002B64C1 /* StoreScreen.swift in Sources */,
 				111834A22B0C137D00EB24C4 /* CafeWithDistance.swift in Sources */,
 				850037682B102D09009C5E8B /* APIConfigs.swift in Sources */,
 				858F15452ABB77F0002B64C1 /* SceneDelegate.swift in Sources */,
+				334B462B2B0B78F9009918ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +740,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -754,6 +801,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -781,6 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VYD5Y58Z2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -810,6 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VYD5Y58Z2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -952,6 +1002,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.18.2;
+			};
+		};
 		8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -963,6 +1021,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		33D0094C2AFECF36004BB2AE /* StripePaymentsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33E211E32AFEC18900DECF22 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentsUI;
+		};
 		8583334C2AE0AA9E005540D6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8583334B2AE0AA9D005540D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
