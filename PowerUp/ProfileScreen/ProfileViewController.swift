@@ -30,14 +30,14 @@ class ProfileViewController: UIViewController {
     }
     
     private func loadUserData() {
-        if let user = FirebaseAuth.Auth.auth().currentUser {
-            // Update the UI on the main thread
-            DispatchQueue.main.async {
-                self.profileView.emailLabel.text = user.email  // User's email
-                self.profileView.nameLabel.text = "UID: \(user.uid)"  // User's UID
+            if let user = FirebaseAuth.Auth.auth().currentUser {
+                DispatchQueue.main.async {
+                    // Directly set the text of the labels
+                    self.profileView.usernameValueLabel.text = user.email ?? "Unavailable"
+                    self.profileView.uidValueLabel.text = user.uid
+                }
             }
         }
-    }
 
     
     @objc func signOut() {
