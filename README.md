@@ -6,6 +6,7 @@ With our PowerUp app, all this can be accomplished and more!
 ## Table of Contents
 - [About The Project](#about-the-project)
 - [Application Usage](#application-usage)
+- [Starting the Application](#starting-the-application)
 - [Tools Used](#tools-used)
 
 ## About The Project
@@ -13,6 +14,13 @@ With our PowerUp app, all this can be accomplished and more!
 <p align="center">
   <img src="Images/PowerUp.pdf.jpg" alt="Power Up" width="1000" height = "1000">
 </p>
+
+## Starting the Application
+
+- **First Step**: Download integrated services through the following link and open it with your Java IDE of choice https://github.com/txli299/integratedService
+-  **Second Step**: Run the YAML file found in integrated services, this will allow the backend database to run
+-  **Third Step**: Run the 'IntegratedServiceApplication' file on your Java IDE
+-  **Fourth Step**: Go to 'localhost:8081' on your web browser which will allow you to see the user, machines, and cafe locations
 
 ## Application Usage
 
