@@ -23,6 +23,11 @@ class WalletViewController: UIViewController {
     override func loadView() {
         view = walletView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadCurrentBalance()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +80,7 @@ class WalletViewController: UIViewController {
         
     }
     
-    func loadCurrentBalance(){
+    @objc func loadCurrentBalance(){
         
         UserService.getUserDetails(uid: uid! ){userData, error in
             
