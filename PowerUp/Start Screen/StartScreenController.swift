@@ -20,7 +20,13 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
     override func loadView() {
         view = startScreen
        }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        getUserCredit()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserCredit()
@@ -64,6 +70,7 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
 
         dismiss(animated: true, completion: nil)
     }
+    
     
     // MARK: Activate machine function
     func showActivateView(){

@@ -17,6 +17,11 @@ class TimeViewController: UIViewController, CLLocationManagerDelegate {
     var activeOrders = [OrderDto]()
     var cafes: [CafeWithDistance] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        retrieveUserActiveOrder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(timeView)
