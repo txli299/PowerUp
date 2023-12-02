@@ -18,9 +18,10 @@ With our PowerUp app, all this can be accomplished and more!
 ## Starting the Application
 
 - **First Step**: Download integrated services through the following link and open it with your Java IDE of choice https://github.com/txli299/integratedService
--  **Second Step**: Run the YAML file found in integrated services, this will allow the backend database to run
--  **Third Step**: Run the 'IntegratedServiceApplication' file on your Java IDE
--  **Fourth Step**: Go to 'localhost:8081' on your web browser which will allow you to see the user, machines, and cafe locations
+-  **Second Step**: Download Docker for your Desktop. This will allow the mongoDB to run on your local machine.
+-  **Third Step**: Run the YAML file found in integrated services, this will allow the backend database to run.
+-  **Fourth Step**: Run the 'IntegratedServiceApplication' file on your Java IDE
+-  **Fifth Step**: Login and begin your cafe adventures!
 
 ## Application Usage
 
