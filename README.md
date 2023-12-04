@@ -37,3 +37,4 @@ With our PowerUp app, all this can be accomplished and more!
 
 To create this project we used the following tools:
 - Swift
+- MongoDB
