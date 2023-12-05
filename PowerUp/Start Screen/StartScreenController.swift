@@ -27,6 +27,48 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
         getUserCredit()
     }
     
+    // Integrated activeteMachine method
+    func activeteMachine(mid: String) {
+        let url = APIConfigs.baseAPI + "machine/activate"
+        AF.request(url, method:.post, parameters: ["userId": uid!, "mid": mid])
+            .responseString(completionHandler: { response in
+                switch response.result {
+                    case .success(_):
+                        if let statusCode = response.response?.statusCode, statusCode == 200 {
+                            // Show a success alert
+                            let alertController = UIAlertController(
+                                title: "Success",
+                                message: "Machine is successfully activated",
+                                preferredStyle: .alert
+                            )
+
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(okAction)
+
+                            self.present(alertController, animated: true, completion: nil)
+                        } else {
+                            // Show an alert for non-200 status codes
+                            self.showFailureAlert()
+                        }
+                    case .failure(let error):
+                        print("Error: \(error)")
+                        // Show an error alert if the request fails
+                        self.showFailureAlert()
+                }
+            })
+    }
+    
+    // Add a showFailureAlert method to handle failures
+    func showFailureAlert() {
+        let alertController = UIAlertController(
+            title: "Notification",
+            message: "Features to be developed.",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserCredit()
@@ -65,8 +107,9 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - UIImagePickerControllerDelegate
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[.originalImage] as? UIImage {
-        }
+        // Handle the selected image. For the sake of the demo, we'll just use a fixed machine ID.
+        let pc2 = "655cfa95a27fe84c6fc0c054"
+        activeteMachine(mid: pc2)
 
         dismiss(animated: true, completion: nil)
     }
@@ -92,10 +135,29 @@ class StartScreenController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     //MARK: submit scan button tapped action...
-    @objc func onButtonScanSubmitTapped(){
-        presentImagePicker(sourceType: .camera)
-        print("Scan Button: I was clicked!")
-    }
+    // Updated onButtonScanSubmitTapped method
+        @objc func onButtonScanSubmitTapped() {
+            let actionSheet = UIAlertController(title: "Scan SQCode", message: "Choose a method", preferredStyle: .actionSheet)
+            
+            // Camera option
+            let cameraAction = UIAlertAction(title: "Use Camera", style: .default) { [unowned self] _ in
+                self.presentImagePicker(sourceType: .camera)
+            }
+            actionSheet.addAction(cameraAction)
+
+            // Photo Library option
+            let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .default) { [unowned self] _ in
+                self.presentImagePicker(sourceType: .photoLibrary)
+            }
+            actionSheet.addAction(photoLibraryAction)
+
+            // Cancel option
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            actionSheet.addAction(cancelAction)
+
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+
     
     //MARK: submit type button tapped action...
     @objc func onButtonTypeSubmitTapped(){
